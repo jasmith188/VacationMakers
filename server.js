@@ -14,6 +14,10 @@ const PORT = process.env.PORT || 3001;
 /* === Call Express as app === */
 const app = express();
 
+app.get("/", function (req, res) {
+  res.send("Seeing if this works for TripAdvisor")
+})
+
 
 /* === Middleware === */
 app.use(logger('dev'));
