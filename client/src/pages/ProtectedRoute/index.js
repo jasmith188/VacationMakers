@@ -40,7 +40,54 @@ function ProtectedRoute() {
 			<Card title="Welcome.">
 				<p>You are logged in.</p>
 			</Card>
+			<div className="row">
+                <div className="col-lg-4">
+                    <div className="chat-popup" id="myForm">
+                        <form action="/action_page.php" class="form-container">
+                            <h1>Chat</h1>
+
+                            <label for="msg"><b>Message</b></label>
+                            <textarea placeholder="Type message.." name="msg" required></textarea>
+
+                            <button type="submit" class="btn">Send</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                        </form>
+                    </div>
+                </div>
+                <div className="col-lg-4">
+                    <div id="kayakSearchWidgetContainer"></div>
+                </div>
+
+                <div className="col-lg-4">
+                    <div className="card">
+                        <div className="card-body">
+                            <h5 className="card-title">Itinerary</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-lg-4">
+                    <div className="card">
+                        <div className="card-body">the spot
+                        </div>
+                    </div>
+                </div>
+                <div className="col-lg-4">
+                    <div className="card">
+                        <div className="card-body">this is a spot
+                        </div>
+                    </div>
+                </div>
+                <div className="col-lg-4">
+                    <div className="card">
+                        <div className="card-body">hello
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</div>
+		
 	)
 
 }
