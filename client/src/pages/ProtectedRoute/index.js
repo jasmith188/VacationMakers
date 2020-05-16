@@ -1,6 +1,10 @@
 import React, { useEffect, useContext } from 'react'
 import Card from "../../components/Card"
 import { UserContext } from "../../utils/UserContext";
+import Search from '../../components/Search';
+import HotelAPI from "../../components/HotelAPI/index";
+// import HotelAPI from "../../components/FlightAPI/index";
+// import HotelAPI from "../../components/Attractions/index";
 
 
 
@@ -42,6 +46,8 @@ function ProtectedRoute() {
             <Card title="Welcome.">
                 <p>You are logged in.</p>
             </Card>
+            <Search />
+            
             <div className="row">
                 <div className="col-lg-4">
 
