@@ -1,8 +1,7 @@
 const router = require("express").Router();
-const usersController = require("../../controllers/bookingController");
+const bookingController = require("../../controllers/bookingController");
 // Matches with "/api/users"
 router.route("/booking")
-    .get(bookingController.findAll)
     .get(bookingController.findAll);
 
 /* Authentication Routes */

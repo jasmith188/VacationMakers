@@ -1,56 +1,46 @@
-import React from 'react'
-// import { Container, Header, Divider, Embed, } from "semantic-ui-react";
-// import OurLoader from "../../components/Loader/index";
-
-
-/* This is a very simple component.. it probably doesn't need to be a smart component at this point but you never know what's goingto happen in the future */
+import React from 'react';
+import axios from 'axios';
 
 class PublicRoute extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: "",
-        };
-    }
-    componentDidMount() {
-        fetch("https://tripadvisor1.p.rapidapi.com/locations/search?location_id=1&limit=30&sort=relevance&offset=0&lang=en_US&currency=USD&units=mi&query=orlando", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-                "x-rapidapi-key": "171c3c8117mshbf6d7c09e712895p1c58b7jsnd365c766c8b8"
-            }
+  state = {
+    posts: []
+  }
+
+  componentDidMount() {
+    axios({
+        "method":"GET",
+        "url":"https://tripadvisor1.p.rapidapi.com/locations/auto-complete",
+        "headers":{
+        "content-type":"application/octet-stream",
+        "x-rapidapi-host":"tripadvisor1.p.rapidapi.com",
+        "x-rapidapi-key":"e60eeecd26msh7858828104aa1fbp16c2d9jsn16ade6057027",
+        "useQueryString":true
+        },"params":{
+        "lang":"en_US",
+        "units":"km",
+        "query":"orlando"
+        }
         })
-            .then(function (response) { return response.json() })
-            .then(data => console.log(data))
-            .catch(err => {
-                console.log(err);
-            });
-    }
+        .then((response)=>{
+          console.log(response)
+        })
+        .catch((error)=>{
+          console.log(error)
+        })
+  }
 
-    create(e) {
-        // add entity - POST
-        e.preventDefault();
-    }
-    update(e) {
-        // update entity - PUT
-        e.preventDefault();
-    }
-    delete(e) {
-        // delete entity - DELETE
-        e.preventDefault();
-    }
-    handleChange(changeObject) {
-        this.setState(changeObject)
-    }
-
-
-    render() {
-        return (
-            <div>
-                <h1>This is a view created by a class component</h1>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <h1>{`/locations/${this.props.tripadvisor}`}</h1>
+        <ul>
+          {this.state.posts.map(post =>
+            <li key={post.id}>{post.title}</li>
+          )}
+        </ul>
+      </div>
+    );
+  }
 }
 
 export default PublicRoute
