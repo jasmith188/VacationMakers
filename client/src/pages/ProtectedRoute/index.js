@@ -2,6 +2,9 @@ import React, { useEffect, useContext } from 'react'
 import Card from "../../components/Card"
 import { UserContext } from "../../utils/UserContext";
 import Search from '../../components/Search';
+import HotelAPI from "../../components/HotelAPI/index";
+// import HotelAPI from "../../components/FlightAPI/index";
+// import HotelAPI from "../../components/Attractions/index";
 
 
 
@@ -49,22 +52,19 @@ function ProtectedRoute() {
                 <div className="col-lg-4">
 
                 </div>
+
                 <div className="col-lg-4">
-                    
+
                 </div>
 
                 <div className="col-lg-4">
-                    <div className="card">
-                        <div className="card-body">
-                            <h5 className="card-title">Itinerary</h5>
-                        </div>
-                    </div>
+
                 </div>
             </div>
-           
-           
-    
-</div>
+
+
+
+        </div >
 
     )
 

@@ -1,15 +1,11 @@
-import React from 'react';
+mport React from 'react';
 import axios from 'axios';
 
-function PublicRoute() {
-   return (
-        <div>
-           
-        </div>
-    );
+class HotelAPI extends React.Component {
+    state = {
+        posts: []
+    }
 
-<<<<<<< HEAD
-=======
     componentDidMount() {
         axios({
             "method": "GET",
@@ -51,7 +47,7 @@ function PublicRoute() {
 
         return (
             <div>
-               
+                {/* <h1>{`/locations/${this.props.tripadvisor}`}</h1> */}
                 <ul>
                     {this.state.posts.map(post =>
                         <li key={post.location_id}>{post.name} <img src={post.photo.images.thumbnail.url} /></li>
@@ -60,7 +56,6 @@ function PublicRoute() {
             </div>
         );
     }
->>>>>>> 02cfa4cf795b956ae5462668235c609b8c9416a2
 }
 
-export default PublicRoute
+export default HotelAPI
