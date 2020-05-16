@@ -28,12 +28,14 @@
     "express-session": "^1.15.6",
     "graphql": "^15.0.0",
     "if-env": "^1.0.4",
+    "isomorphic-unfetch": "^3.0.0",
     "mongoose": "^5.4.6",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.1",
     "react-chat-widget": "^3.0.1",
+    "react-google-maps": "^9.4.5",
     "semantic-ui-react": "^0.88.2"
   }
 }
