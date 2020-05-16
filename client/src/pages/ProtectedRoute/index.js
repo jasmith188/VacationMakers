@@ -50,15 +50,15 @@ function ProtectedRoute() {
             
             <div className="row">
                 <div className="col-lg-4">
-
+            <HotelAPI/>
                 </div>
 
                 <div className="col-lg-4">
-
+            {/* <FlightAPI/> */}
                 </div>
 
                 <div className="col-lg-4">
-
+                {/* <AttractionsAPI/> */}
                 </div>
             </div>
 
