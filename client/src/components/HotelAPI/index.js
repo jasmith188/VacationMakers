@@ -47,12 +47,17 @@ class HotelAPI extends React.Component {
 
         return (
             <div>
-                {/* <h1>{`/locations/${this.props.tripadvisor}`}</h1> */}
-                <ul>
-                    {this.state.posts.map(post =>
-                        <li key={post.location_id}>{post.name} <img src={post.photo.images.thumbnail.url} /></li>
-                    )}
-                </ul>
+                <div className="card-body">
+                    <div className="card">
+                        <ul>
+                            {this.state.posts.map(post =>
+                                <li key={post.location_id}>{post.name} <img src={post.photo.images.thumbnail.url} /></li>
+                            )}
+                        </ul>
+                    </div>
+
+                </div>
+
             </div>
         );
     }

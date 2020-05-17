@@ -1,10 +1,17 @@
 import React, { useEffect, useContext } from 'react'
+import "../ProtectedRoute/protected.css"
 import Card from "../../components/Card"
 import { UserContext } from "../../utils/UserContext";
 import Search from '../../components/Search';
+import {BudgetBalance} from '../../components/BudgetBalance';
+import {BudgetExpense} from '../../components/BudgetExpense';
+import {BudgetHeader} from '../../components/BudgetHeader';
+import {BudgetTransactionList }from '../../components/BudgetTransactionList';
 import HotelAPI from "../../components/HotelAPI/index";
+import { BudgetAddTransaction } from '../../components/BudgetAddTransaction';
 // import HotelAPI from "../../components/FlightAPI/index";
 // import HotelAPI from "../../components/Attractions/index";
+// import Table from "../../components/Table/index"
 
 
 
@@ -47,23 +54,34 @@ function ProtectedRoute() {
                 <p>You are logged in.</p>
             </Card>
             <Search />
-            
+
             <div className="row">
                 <div className="col-lg-4">
-            <HotelAPI/>
+                    <HotelAPI />
                 </div>
 
                 <div className="col-lg-4">
-            {/* <FlightAPI/> */}
+                    {/* <FlightAPI/> */}
                 </div>
 
                 <div className="col-lg-4">
-                {/* <AttractionsAPI/> */}
+                    {/* <AttractionsAPI/> */}
                 </div>
             </div>
+            <div className="row">
+                <div className="col-lg-6">
+                <BudgetHeader />
+                <div className="container">
+                    <BudgetBalance />
+                    <BudgetExpense/>
+                    <BudgetTransactionList/>
+                    <BudgetAddTransaction />
+                </div>
+                </div>
 
 
 
+            </div >
         </div >
 
     )
