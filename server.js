@@ -44,6 +44,7 @@ if (process.env.NODE_ENV === "production") {
 /* === Routing === */
 
 app.use(routes);
+app.use(require("./routes/api.js"));
 
 /* === Express 404 error handler === */
 app.use(function (req, res, next) {
