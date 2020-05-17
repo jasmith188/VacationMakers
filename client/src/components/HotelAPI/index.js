@@ -51,7 +51,7 @@ class HotelAPI extends React.Component {
                     <div className="card">
                         <ul>
                             {this.state.posts.map(post =>
-                                <li key={post.location_id}>{post.name} <img src={post.photo.images.thumbnail.url} /></li>
+                                <li key={post.location_id}>{post.name} <img src={post.photo.images.thumbnail.url}  /></li>
                             )}
                         </ul>
                     </div>

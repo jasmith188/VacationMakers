@@ -6,6 +6,7 @@ import Search from '../../components/Search';
 import HotelAPI from "../../components/HotelAPI/index";
 import RestaurantAPI from "../../components/RestaurantAPI"
 import AttractionsAPI from "../../components/AttractionsAPI"
+// import FlightAPI from "../../components/FlightAPI"
 import Budget from "../../components/Budget"
 
 
@@ -51,28 +52,33 @@ function ProtectedRoute() {
             <Search />
 
             <div className="row">
-                <div className="col-lg-4">
+                <div className="col-lg-6">
                     <HotelAPI />
                 </div>
 
-                <div className="col-lg-4">
-                    <RestaurantAPI/>
-                </div>
-
-                <div className="col-lg-4">
-                    <AttractionsAPI/>
+                <div className="col-lg-6">
+                    <RestaurantAPI />
                 </div>
             </div>
             <div className="row">
                 <div className="col-lg-6">
-                <Budget />
+                    {/* <FlightAPI /> */}
+                </div>
+                <div className="col-lg-6">
+                    <AttractionsAPI />
+                </div>
+            </div>
+
+            <div className="row">
+                <div className="col-lg-6">
+                    <Budget />
                 </div>
 
 
 
             </div >
-        </div >
 
+        </div>
     )
 
 }
