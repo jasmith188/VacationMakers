@@ -3,14 +3,10 @@ import "../ProtectedRoute/protected.css"
 import Card from "../../components/Card"
 import { UserContext } from "../../utils/UserContext";
 import Search from '../../components/Search';
-import {BudgetBalance} from '../../components/BudgetBalance';
-import {BudgetExpense} from '../../components/BudgetExpense';
-import {BudgetHeader} from '../../components/BudgetHeader';
-import {BudgetTransactionList }from '../../components/BudgetTransactionList';
 import HotelAPI from "../../components/HotelAPI/index";
-import { BudgetAddTransaction } from '../../components/BudgetAddTransaction';
 import RestaurantAPI from "../../components/RestaurantAPI"
 import AttractionsAPI from "../../components/AttractionsAPI"
+import Budget from "../../components/Budget"
 
 
 
@@ -69,13 +65,7 @@ function ProtectedRoute() {
             </div>
             <div className="row">
                 <div className="col-lg-6">
-                <BudgetHeader />
-                <div className="container">
-                    <BudgetBalance />
-                    <BudgetExpense/>
-                    <BudgetTransactionList/>
-                    <BudgetAddTransaction />
-                </div>
+                <Budget />
                 </div>
 
 
