@@ -1,33 +1,30 @@
 import React from 'react';
 import axios from 'axios';
 
-class HotelAPI extends React.Component {
+class RestaurantAPI extends React.Component {
     state = {
         posts: []
     }
 
     componentDidMount() {
         axios({
-            "method": "GET",
-            "url": "https://tripadvisor1.p.rapidapi.com/hotels/list",
-            "headers": {
-                "content-type": "application/octet-stream",
-                "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-                "x-rapidapi-key": "171c3c8117mshbf6d7c09e712895p1c58b7jsnd365c766c8b8",
-                "useQueryString": true
-            }, "params": {
-                "offset": "0",
-                "currency": "USD",
-                "limit": "10",
-                "order": "asc",
-                "lang": "en_US",
-                "sort": "recommended",
-                "nights": "2",
-                "location_id": "293919",
-                "adults": "1",
-                "rooms": "1"
+            "method":"GET",
+            "url":"https://tripadvisor1.p.rapidapi.com/restaurants/list",
+            "headers":{
+            "content-type":"application/octet-stream",
+            "x-rapidapi-host":"tripadvisor1.p.rapidapi.com",
+            "x-rapidapi-key":"e60eeecd26msh7858828104aa1fbp16c2d9jsn16ade6057027",
+            "useQueryString":true
+            },"params":{
+            "restaurant_tagcategory_standalone":"10591",
+            "lunit":"km",
+            "restaurant_tagcategory":"10591",
+            "limit":"30",
+            "currency":"USD",
+            "lang":"en_US",
+            "location_id":"293919"
             }
-        })
+            })
             .then((response) => {
                 //   console.log(response.data.data)
                 //   let lodging = response.data.data.filter((data)=> {
@@ -51,7 +48,7 @@ class HotelAPI extends React.Component {
                     <div className="card">
                         <ul>
                             {this.state.posts.map(post =>
-                                <li key={post.location_id}>{post.name} <img src={post.photo.images.thumbnail.url} /></li>
+                                <li key={post.location_id}>{post.name}  </li>
                             )}
                         </ul>
                     </div>
@@ -63,4 +60,4 @@ class HotelAPI extends React.Component {
     }
 }
 
-export default HotelAPI
+export default RestaurantAPI

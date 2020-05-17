@@ -9,9 +9,8 @@ import {BudgetHeader} from '../../components/BudgetHeader';
 import {BudgetTransactionList }from '../../components/BudgetTransactionList';
 import HotelAPI from "../../components/HotelAPI/index";
 import { BudgetAddTransaction } from '../../components/BudgetAddTransaction';
-// import HotelAPI from "../../components/FlightAPI/index";
-// import HotelAPI from "../../components/Attractions/index";
-// import Table from "../../components/Table/index"
+import RestaurantAPI from "../../components/RestaurantAPI"
+import AttractionsAPI from "../../components/AttractionsAPI"
 
 
 
@@ -61,11 +60,11 @@ function ProtectedRoute() {
                 </div>
 
                 <div className="col-lg-4">
-                    {/* <FlightAPI/> */}
+                    <RestaurantAPI/>
                 </div>
 
                 <div className="col-lg-4">
-                    {/* <AttractionsAPI/> */}
+                    <AttractionsAPI/>
                 </div>
             </div>
             <div className="row">
