@@ -9,13 +9,13 @@ const transactionSchema = new Schema(
       trim: true,
       required: "Enter a name for transaction"
     },
-    value: {
-      type: Number,
-      required: "Enter an amount"
+    location: {
+      type: String,
+      required: "Enter a place"
     },
-    date: {
-      type: Date,
-      default: Date.now
+    price: {
+      type: String,
+      required: "Enter a price"
     }
   }
 );

@@ -2,7 +2,6 @@ import React, { useEffect, useContext } from 'react'
 import "../ProtectedRoute/protected.css"
 import Card from "../../components/Card"
 import { UserContext } from "../../utils/UserContext";
-import Search from '../../components/Search';
 import Hotel from "../../components/Hotel/index";
 import Restaurant from "../../components/Restaurant"
 import Attractions from "../../components/Attractions"
@@ -49,7 +48,7 @@ function ProtectedRoute() {
             <Card title="Welcome.">
                 <p>You are logged in.</p>
             </Card>
-            <Search />
+            
 
             <div className="row">
                 <div className="col-lg-12">
