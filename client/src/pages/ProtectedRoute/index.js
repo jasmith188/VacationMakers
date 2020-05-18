@@ -8,7 +8,6 @@ import Restaurant from "../../components/Restaurant"
 import Attractions from "../../components/Attractions"
 // import Flight from "../../components/Flight"
 import Budget from "../../components/Budget"
-import default from "../../components/Chat"
 
 
 
@@ -53,33 +52,30 @@ function ProtectedRoute() {
             <Search />
 
             <div className="row">
-                <div className="col-lg-6">
-                    <Hotel />
+                <div className="col-lg-12">
+                    <Budget />
                 </div>
-
+            </div >
+            <div className="row">
                 <div className="col-lg-6">
                     <Restaurant />
                 </div>
-            </div>
-            <div className="row">
+
                 <div className="col-lg-6">
                     {/* <Flight /> */}
                 </div>
+            </div>
+            <div className="row">
                 <div className="col-lg-6">
                     <Attractions />
                 </div>
-            </div>
-
-            <div className="row">
                 <div className="col-lg-6">
-                    <Budget />
+                    <Hotel />
                 </div>
+            </div>
+        </div >
 
 
-
-            </div >
-
-        </div>
     )
 
 }
