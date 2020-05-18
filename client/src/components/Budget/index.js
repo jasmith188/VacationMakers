@@ -21,8 +21,10 @@ function Budget() {
   // Loads all transactions and sets them to transactions
   function loadTransactions() {
     transaction.getTransactions()
-      .then(res =>
-        setTransactions(res.data)
+      .then(res =>{
+        console.log("TEST" + res.data);
+        setTransactions(res.data)}
+       
       )
       .catch(err => console.log(err));
   };
@@ -68,7 +70,7 @@ function Budget() {
               placeholder="Name"
             />
             <Input
-              onChange= { handleInputChange}
+              onChange= {handleInputChange}
               name="location"
               placeholder="Location"
             />

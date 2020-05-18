@@ -13,7 +13,7 @@ class AttractionsAPI extends React.Component {
             "headers":{
             "content-type":"application/octet-stream",
             "x-rapidapi-host":"tripadvisor1.p.rapidapi.com",
-            "x-rapidapi-key":"e60eeecd26msh7858828104aa1fbp16c2d9jsn16ade6057027",
+            "x-rapidapi-key":"171c3c8117mshbf6d7c09e712895p1c58b7jsnd365c766c8b8",
             "useQueryString":true
             },"params":{
             "lang":"en_US",
