@@ -45,7 +45,7 @@ function Budget() {
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.title && formObject.author) {
-      transaction.saveBook({
+      transaction.saveTransaction({
         name: formObject.name,
         location: formObject.location,
         price: formObject.price
@@ -63,23 +63,23 @@ function Budget() {
           </TransactionJumbotron>
           <form>
             <Input
-              onChange={() => { }}
+              onChange= {handleInputChange}
               name="name"
               placeholder="Name"
             />
             <Input
-              onChange={() => { }}
+              onChange= { handleInputChange}
               name="location"
               placeholder="Location"
             />
             <TextArea
-              onChange={() => { }}
+              onChange={handleInputChange }
               name="price"
               placeholder="Price"
             />
             <FormBtn
-              disabled={!(formObject.author && formObject.title)}
-              onClick={() => { }}
+              disabled={!(formObject.name && formObject.location)}
+              onClick={handleFormSubmit}
             >
               Submit
               </FormBtn>
@@ -99,7 +99,7 @@ function Budget() {
                         {transaction.name} by {transaction.location}
                       </strong>
                     </a>
-                    <TransactionDeleteBtn onClick={() => { }} />
+                    <TransactionDeleteBtn onClick={() => { deleteTransaction(transaction._id)}} />
                   </ListItem>
                 );
               })}
