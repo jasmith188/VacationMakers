@@ -11,6 +11,16 @@ router.post("/api/transaction", ({body}, res) => {
     });
 });
 
+router.delete("/api/transaction/:id", (req, res) => {
+  Transaction.findByIdAndRemove(req.params.id)
+    .then(() => {
+      res.json(true);
+    })
+    .catch(err => {
+      res.status(404).json(err);
+    });
+});
+
 router.post("/api/transaction/bulk", ({body}, res) => {
   Transaction.insertMany(body)
     .then(dbTransaction => {

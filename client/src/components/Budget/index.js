@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
-import Table from 'react-bootstrap/Table'
 import transaction from "../../utils/transaction"
+import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/TransactionGrid";
 import { TransactionList, ListItem } from "../../components/TransactionList";
 import { Input, TextArea, FormBtn } from "../../components/TransactionForm";
@@ -13,21 +13,23 @@ function Budget() {
   const [transactions, setTransactions] = useState([])
   const [formObject, setFormObject] = useState({})
 
-  // // Load all books and store them with setBooks
-  // useEffect(() => {
-  //   loadTransactions()
-  // }, [])
+  // Load all transactions and store them with setBooks
+  useEffect(() => {
+    loadTransactions()
+  }, [])
 
-  // Loads all books and sets them to books
+  // Loads all transactions and sets them to transactions
   function loadTransactions() {
     transaction.getTransactions()
-      .then(res =>
-        setTransactions(res.data)
+      .then(res =>{
+        console.log("TEST" + res.data);
+        setTransactions(res.data)}
+       
       )
       .catch(err => console.log(err));
   };
 
-  // Deletes a book from the database with a given id, then reloads books from the db
+  // Deletes a transaction from the database with a given id, then reloads transactions from the db
   function deleteTransaction(id) {
     transaction.deleteTransaction(id)
       .then(res => loadTransactions())
@@ -40,11 +42,11 @@ function Budget() {
     setFormObject({ ...formObject, [name]: value })
   };
 
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
+  // When the form is submitted, use the API.saveBook method to save the transaction data
+  // Then reload transactions from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.title && formObject.author) {
+    if (formObject.name && formObject.location) {
       transaction.saveTransaction({
         name: formObject.name,
         location: formObject.location,
@@ -68,7 +70,7 @@ function Budget() {
               placeholder="Name"
             />
             <Input
-              onChange= { handleInputChange}
+              onChange= {handleInputChange}
               name="location"
               placeholder="Location"
             />
@@ -91,18 +93,16 @@ function Budget() {
           </TransactionJumbotron>
           {transactions.length ? (
             <TransactionList>
-              {transactions.map(transaction => {
-                return (
-                  <ListItem key={transaction._id}>
-                    <a href={"/transactions/" + transaction._id}>
+              {transactions.map(transaction => (
+                <ListItem key={transaction._id}>
+                    <Link to={"/transaction/" + transaction._id}>
                       <strong>
                         {transaction.name} by {transaction.location}
                       </strong>
-                    </a>
-                    <TransactionDeleteBtn onClick={() => { deleteTransaction(transaction._id)}} />
+                    </Link>
+                    <TransactionDeleteBtn onClick={() =>  deleteTransaction(transaction._id)} />
                   </ListItem>
-                );
-              })}
+                ))}
             </TransactionList>
           ) : (
               <h3>No Results to Display</h3>
@@ -110,7 +110,7 @@ function Budget() {
         </Col>
       </Row>
     </Container>
-  )
+  );
 }
 
 export default Budget
