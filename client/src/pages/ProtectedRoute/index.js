@@ -3,11 +3,12 @@ import "../ProtectedRoute/protected.css"
 import Card from "../../components/Card"
 import { UserContext } from "../../utils/UserContext";
 import Search from '../../components/Search';
-import HotelAPI from "../../components/HotelAPI/index";
-import RestaurantAPI from "../../components/RestaurantAPI"
-import AttractionsAPI from "../../components/AttractionsAPI"
-// import FlightAPI from "../../components/FlightAPI"
+import Hotel from "../../components/Hotel/index";
+import Restaurant from "../../components/Restaurant"
+import Attractions from "../../components/Attractions"
+// import Flight from "../../components/Flight"
 import Budget from "../../components/Budget"
+import default from "../../components/Chat"
 
 
 
@@ -53,19 +54,19 @@ function ProtectedRoute() {
 
             <div className="row">
                 <div className="col-lg-6">
-                    <HotelAPI />
+                    <Hotel />
                 </div>
 
                 <div className="col-lg-6">
-                    <RestaurantAPI />
+                    <Restaurant />
                 </div>
             </div>
             <div className="row">
                 <div className="col-lg-6">
-                    {/* <FlightAPI /> */}
+                    {/* <Flight /> */}
                 </div>
                 <div className="col-lg-6">
-                    <AttractionsAPI />
+                    <Attractions />
                 </div>
             </div>
 

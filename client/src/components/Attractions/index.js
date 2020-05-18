@@ -46,7 +46,7 @@ class AttractionsAPI extends React.Component {
                     <div className="card">
                         <ul>
                             {this.state.posts.map(post =>
-                                <li key={post.location_id}>{post.name} </li>
+                                <li key={post.location_id}>{post.name}{post.ranking}</li>
                             )}
                         </ul>
                     </div>
