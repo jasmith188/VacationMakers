@@ -3,10 +3,10 @@ import "../ProtectedRoute/protected.css"
 import Card from "../../components/Card"
 import { UserContext } from "../../utils/UserContext";
 import Search from '../../components/Search';
-import HotelAPI from "../../components/HotelAPI/index";
-import RestaurantAPI from "../../components/RestaurantAPI"
-import AttractionsAPI from "../../components/AttractionsAPI"
-// import FlightAPI from "../../components/FlightAPI"
+import Hotel from "../../components/Hotel/index";
+import Restaurant from "../../components/Restaurant"
+import Attractions from "../../components/Attractions"
+// import Flight from "../../components/Flight"
 import Budget from "../../components/Budget"
 
 
@@ -52,33 +52,30 @@ function ProtectedRoute() {
             <Search />
 
             <div className="row">
-                <div className="col-lg-6">
-                    <HotelAPI />
-                </div>
-
-                <div className="col-lg-6">
-                    <RestaurantAPI />
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-lg-6">
-                    {/* <FlightAPI /> */}
-                </div>
-                <div className="col-lg-6">
-                    <AttractionsAPI />
-                </div>
-            </div>
-
-            <div className="row">
-                <div className="col-lg-6">
+                <div className="col-lg-12">
                     <Budget />
                 </div>
-
-
-
             </div >
+            <div className="row">
+                <div className="col-lg-6">
+                    <Restaurant />
+                </div>
 
-        </div>
+                <div className="col-lg-6">
+                    {/* <Flight /> */}
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-lg-6">
+                    <Attractions />
+                </div>
+                <div className="col-lg-6">
+                    <Hotel />
+                </div>
+            </div>
+        </div >
+
+
     )
 
 }

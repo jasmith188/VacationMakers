@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react'
 
 import { Button, Form } from 'react-bootstrap';
 
@@ -9,7 +8,7 @@ function Search() {
         <div>
             <Form>
                 <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Search Cities</Form.Label>
+                    <Form.Label>Search A City </Form.Label>
                     <Form.Control type="email" placeholder="Cities" />
                 </Form.Group>
 

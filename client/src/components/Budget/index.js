@@ -1,4 +1,5 @@
 import React from "react"
+import "../../components/Budget/index.css"
 
 function Budget() {
     return (
