@@ -1,37 +1,116 @@
-import React from "react"
-import "../../components/Budget/index.css"
+import React, { useState, useEffect } from "react"
+import Table from 'react-bootstrap/Table'
+import transaction from "../../utils/transaction"
+import { Col, Row, Container } from "../../components/TransactionGrid";
+import { TransactionList, ListItem } from "../../components/TransactionList";
+import { Input, TextArea, FormBtn } from "../../components/TransactionForm";
+import TransactionJumbotron from "../../components/TransactionJumbotron";
+import TransactionDeleteBtn from "../../components/TransactionDeleteBtn";
+import "../Budget/index.css"
 
 function Budget() {
-    return (
-        <div className="wrapper">
-    <div className="total">
-      <div className="total">Your total is: $<span id="total">0</span></div>
-    </div>
+  // Setting our component's initial state
+  const [transactions, setTransactions] = useState([])
+  const [formObject, setFormObject] = useState({})
 
-    <div className="form">
-      <input type="text" id="t-name" placeholder="Name of transaction" />
-      <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
-      <button id="add-btn"><i className="fa fa-plus buttons"></i> Add Funds</button>
-      <button id="sub-btn"><i className="fa fa-minus"></i> Subtract Funds</button>
-      <p class="error"></p>
-    </div>
+  // // Load all books and store them with setBooks
+  // useEffect(() => {
+  //   loadTransactions()
+  // }, [])
 
-    <div className="transactions">
-      <table>
-        <thead>
-          <th>Transaction</th>
-          <th>Amount</th>
-        </thead>
-        <tbody id="tbody">
-          
-        </tbody>
-      </table>
-    </div>
-    
-    <canvas id="myChart"></canvas>
-  </div>
+  // Loads all books and sets them to books
+  function loadTransactions() {
+    transaction.getTransactions()
+      .then(res =>
+        setTransactions(res.data)
+      )
+      .catch(err => console.log(err));
+  };
 
-    )
+  // Deletes a book from the database with a given id, then reloads books from the db
+  function deleteTransaction(id) {
+    transaction.deleteTransaction(id)
+      .then(res => loadTransactions())
+      .catch(err => console.log(err));
+  }
+
+  // Handles updating component state when the user types into the input field
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormObject({ ...formObject, [name]: value })
+  };
+
+  // When the form is submitted, use the API.saveBook method to save the book data
+  // Then reload books from the database
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    if (formObject.title && formObject.author) {
+      transaction.saveBook({
+        name: formObject.name,
+        location: formObject.location,
+        price: formObject.price
+      })
+        .then(res => loadTransactions())
+        .catch(err => console.log(err));
+    }
+  };
+  return (
+    <Container fluid>
+      <Row>
+        <Col size="md-6">
+          <TransactionJumbotron>
+            <h1>What Should I do on Vacation?</h1>
+          </TransactionJumbotron>
+          <form>
+            <Input
+              onChange={() => { }}
+              name="name"
+              placeholder="Name"
+            />
+            <Input
+              onChange={() => { }}
+              name="location"
+              placeholder="Location"
+            />
+            <TextArea
+              onChange={() => { }}
+              name="price"
+              placeholder="Price"
+            />
+            <FormBtn
+              disabled={!(formObject.author && formObject.title)}
+              onClick={() => { }}
+            >
+              Submit
+              </FormBtn>
+          </form>
+        </Col>
+        <Col size="md-6 sm-12">
+          <TransactionJumbotron>
+            <h1>Things I Have Planned</h1>
+          </TransactionJumbotron>
+          {transactions.length ? (
+            <TransactionList>
+              {transactions.map(transaction => {
+                return (
+                  <ListItem key={transaction._id}>
+                    <a href={"/transactions/" + transaction._id}>
+                      <strong>
+                        {transaction.name} by {transaction.location}
+                      </strong>
+                    </a>
+                    <TransactionDeleteBtn onClick={() => { }} />
+                  </ListItem>
+                );
+              })}
+            </TransactionList>
+          ) : (
+              <h3>No Results to Display</h3>
+            )}
+        </Col>
+      </Row>
+    </Container>
+  )
 }
 
 export default Budget
