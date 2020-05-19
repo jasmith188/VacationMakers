@@ -4,8 +4,8 @@ function Card({ icon, title, children }) {
   return (
     <div className="card mt-4">
       <div className="card-header">
-        <h3>
-          <strong>
+        <h3 className="welcome">
+          <strong className="welcome">
             <i className={`fa fa-${icon}`} aria-hidden="true" /> {title}
           </strong>
         </h3>
