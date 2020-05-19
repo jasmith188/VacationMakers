@@ -1,44 +1,41 @@
 import React from 'react';
 import axios from 'axios';
+import postData from "./data";
 
 class Restaurant extends React.Component {
     state = {
-        posts: []
+        posts: postData
+        
     }
 
     componentDidMount() {
-        axios({
-            "method": "GET",
-            "url": "https://tripadvisor1.p.rapidapi.com/restaurants/list",
-            "headers": {
-                "content-type": "application/octet-stream",
-                "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-                "x-rapidapi-key": "171c3c8117mshbf6d7c09e712895p1c58b7jsnd365c766c8b8",
-                "useQueryString": true
-            }, "params": {
-                "restaurant_tagcategory_standalone": "10591",
-                "lunit": "mi",
-                "restaurant_tagcategory": "10591",
-                "limit": "30",
-                "currency": "USD",
-                "lang": "en_US",
-                "location_id": "293919"
-            }
-        })
-            .then((response) => {
-                //   console.log(response.data.data)
-                //   let lodging = response.data.data.filter((data)=> {
-                //       return data.result_type === "lodging";
-                //   })
+        // axios({
+        //     "method": "GET",
+        //     "url": "https://tripadvisor1.p.rapidapi.com/restaurants/list",
+        //     "headers": {
+        //         "content-type": "application/octet-stream",
+        //         "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+        //         "x-rapidapi-key": "e60eeecd26msh7858828104aa1fbp16c2d9jsn16ade6057027",
+        //         "useQueryString": true
+        //     }, "params": {
+        //         "restaurant_tagcategory_standalone": "10591",
+        //         "lunit": "mi",
+        //         "restaurant_tagcategory": "10591",
+        //         "limit": "5",
+        //         "currency": "USD",
+        //         "lang": "en_US",
+        //         "location_id": "293919"
+        //     }
+        // })
+        // .then((response) => {
+        //       console.log(response.data.data)
+        //     this.setState({ posts: response.data.data })
 
-                console.log(response.data.data)
-                this.setState({ posts: response.data.data })
-
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-    }
+        // })
+        // .catch((error) => {
+        //     console.log(error)
+        // })
+}
 
     render() {
 
@@ -48,7 +45,10 @@ class Restaurant extends React.Component {
                     <div className="card">
                         <ul>
                             {this.state.posts.map(post =>
-                                <li key={post.location_id}>{post.name}{post.price}</li>
+                                
+                                <h5 key={post.location_id}>{post.location} | {post.name} | ${post.price}  </h5>
+                                // <img src= {post.photo.images.small.url }alt=""></img>
+                                
                             )}
                         </ul>
                     </div>

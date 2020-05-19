@@ -2,10 +2,10 @@ import React, { useEffect, useContext } from 'react'
 import "../ProtectedRoute/protected.css"
 import Card from "../../components/Card"
 import { UserContext } from "../../utils/UserContext";
-// import Hotel from "../../components/Hotel/index";
-// import Restaurant from "../../components/Restaurant"
-// import Attractions from "../../components/Attractions"
-// import Flight from "../../components/Flight"
+import Hotel from "../../components/Hotel/index";
+import Restaurant from "../../components/Restaurant"
+import Attractions from "../../components/Attractions"
+import Flight from "../../components/Flight"
 import Budget from "../../components/Budget"
 import "../ProtectedRoute/protected.css"
 
@@ -46,10 +46,10 @@ function ProtectedRoute() {
             <div className="alert alert-success" role="alert">
                 Success, You are logged in
 				</div>
-            <Card title="Vacation Makers">
+            <Card title="ITINERARY">
             </Card>
             
-
+            <div className="container">
             <div className="row">
                 <div className="col-lg-12">
                     <Budget />
@@ -57,21 +57,27 @@ function ProtectedRoute() {
             </div >
             <div className="row">
                 <div className="col-lg-6">
-                    {/* <Restaurant /> */}
+                    Restaurants
+                    <Restaurant />
                 </div>
 
                 <div className="col-lg-6">
-                    {/* <Flight /> */}
+                    Flights
+                    <Flight />
                 </div>
             </div>
             <div className="row">
                 <div className="col-lg-6">
-                    {/* <Attractions /> */}
+                    Attractions
+                    <Attractions />
                 </div>
                 <div className="col-lg-6">
-                    {/* <Hotel /> */}
+                    Hotels
+                    <Hotel />
                 </div>
             </div>
+            </div>
+            
         </div >
 
 
