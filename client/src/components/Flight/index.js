@@ -38,7 +38,7 @@ class Flight extends React.Component {
                     <div className="card">
                         <ul>
                             {this.state.posts.map(post =>
-                                <h5 key={post.location_id}>{post.location} | {post.name} | ${post.price}  </h5>
+                                <h5 key={post.location_id}>{post.location} | {post.name} | {post.date} | ${post.price}  </h5>
                             )}
                         </ul>
                     </div>
