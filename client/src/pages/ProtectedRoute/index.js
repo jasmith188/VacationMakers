@@ -2,11 +2,12 @@ import React, { useEffect, useContext } from 'react'
 import "../ProtectedRoute/protected.css"
 import Card from "../../components/Card"
 import { UserContext } from "../../utils/UserContext";
-import Hotel from "../../components/Hotel/index";
-import Restaurant from "../../components/Restaurant"
-import Attractions from "../../components/Attractions"
+// import Hotel from "../../components/Hotel/index";
+// import Restaurant from "../../components/Restaurant"
+// import Attractions from "../../components/Attractions"
 // import Flight from "../../components/Flight"
 import Budget from "../../components/Budget"
+import "../ProtectedRoute/protected.css"
 
 
 
@@ -41,12 +42,11 @@ function ProtectedRoute() {
     }, []);
 
     return (
-        <div className="container">
+        <div>
             <div className="alert alert-success" role="alert">
                 Success, You are logged in
 				</div>
-            <Card title="Welcome.">
-                <p>You are logged in.</p>
+            <Card title="Vacation Makers">
             </Card>
             
 
@@ -57,7 +57,7 @@ function ProtectedRoute() {
             </div >
             <div className="row">
                 <div className="col-lg-6">
-                    <Restaurant />
+                    {/* <Restaurant /> */}
                 </div>
 
                 <div className="col-lg-6">
@@ -66,10 +66,10 @@ function ProtectedRoute() {
             </div>
             <div className="row">
                 <div className="col-lg-6">
-                    <Attractions />
+                    {/* <Attractions /> */}
                 </div>
                 <div className="col-lg-6">
-                    <Hotel />
+                    {/* <Hotel /> */}
                 </div>
             </div>
         </div >

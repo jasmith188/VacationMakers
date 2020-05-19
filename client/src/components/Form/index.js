@@ -1,4 +1,5 @@
 import React from "react";
+import "../../components/Form/index.css"
 
 function Form({ q, handleInputChange, handleFormSubmit }) {
   return (

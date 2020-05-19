@@ -74,7 +74,7 @@ function Budget() {
               name="location"
               placeholder="Location"
             />
-            <TextArea
+            <Input
               onChange={handleInputChange }
               name="price"
               placeholder="Price"
@@ -97,7 +97,7 @@ function Budget() {
                 <ListItem key={transaction._id}>
                     <Link to={"/transaction/" + transaction._id}>
                       <strong>
-                        {transaction.name} by {transaction.location}
+                        {transaction.name} in {transaction.location} for {transaction.price}
                       </strong>
                     </Link>
                     <TransactionDeleteBtn onClick={() =>  deleteTransaction(transaction._id)} />
@@ -105,7 +105,7 @@ function Budget() {
                 ))}
             </TransactionList>
           ) : (
-              <h3>No Results to Display</h3>
+              <h3>Nothing Planned Yet...</h3>
             )}
         </Col>
       </Row>
