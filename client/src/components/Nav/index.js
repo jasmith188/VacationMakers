@@ -39,15 +39,15 @@ function Nav() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
-      <Link className="navbar-brand" to="/">
+      <Link className="navbar-brand" to="/public">
         Welcome
         </Link>
       <div className={`${open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
         {user.username ? <span className="userText text-white ml-3 pt-1" to="#">Hi {user.username} !</span> : ""}
         <ul className="navbar-nav ml-auto">
           <li className="nav-item ">
-            <Link style={buttonStyle} className=" btn btn-secondary" to="/public">Public Page</Link>
-            <Link style={buttonStyle} className="btn btn-danger" to="/protected">Protected Page</Link>
+            {/* <Link style={buttonStyle} className=" btn btn-secondary" to="/public">Public Page</Link> */}
+            {/* <Link style={buttonStyle} className="btn btn-danger" to="/protected">Protected Page</Link> */}
             {user.username ? "" :
               <Link style={buttonStyle} className="btn btn-warning" to="/register">Register a New User</Link>
             }
