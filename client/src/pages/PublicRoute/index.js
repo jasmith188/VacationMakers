@@ -1,9 +1,12 @@
 import React from 'react';
+import "../PublicRoute/public.css"
 
 function PublicRoute() {
    return (
-        <div>
-           <h1>hey</h1>
+        <div className="public-container">
+           <div className="public-text">
+           <h1>Welcome!! let us help you plan your future vacation</h1>
+           </div>
         </div>
     );
 
