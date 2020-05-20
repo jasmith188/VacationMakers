@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import transaction from "../../utils/transaction"
+import Card from 'react-bootstrap/Card'
 import { Link } from "react-router-dom";
 import { TransactionList, ListItem } from "../../components/TransactionList";
 import { Input, TextArea, FormBtn } from "../../components/TransactionForm";
@@ -67,62 +68,67 @@ function Budget() {
     <div>
       <div className="row">
         <div className="col-lg-5">
-          <h4 />
-            <h3>What Should I do on Vacation?</h3>
-          
-          <form>
-            <Input
-              onChange={handleInputChange}
-              name="name"
-              placeholder="Name"
-            />
-            <Input
-              onChange={handleInputChange}
-              name="location"
-              placeholder="Location"
-            />
-            <Input
-              onChange={handleInputChange}
-              name="price"
-              placeholder="Price"
-            />
-            <FormBtn
-              disabled={!(formObject.name && formObject.location)}
-              onClick={handleFormSubmit}
-            >
-              Submit
+          <Card style={{ width: '18rem' }}>
+            <Card.Title>What Should I do on Vacation?</Card.Title>
+            <form>
+              <Input
+                onChange={handleInputChange}
+                name="name"
+                placeholder="Name"
+              />
+              <Input
+                onChange={handleInputChange}
+                name="location"
+                placeholder="Location"
+              />
+              <Input
+                onChange={handleInputChange}
+                name="price"
+                placeholder="Price"
+              />
+              <Input
+                onChange={handleInputChange}
+                name="dates"
+                placeholder="Dates (Optional)"
+              />
+              <FormBtn
+                disabled={!(formObject.name && formObject.location)}
+                onClick={handleFormSubmit}
+              >
+                Submit
               </FormBtn>
-          </form>
+            </form>
+          </Card>
         </div>
         <div className="col-lg-5">
-        <h4 />
-            <h3>Things I Have Planned</h3>
-          
-          {transactions.length ? (
-            <TransactionList>
-              {transactions.map(transaction => (
-                <ListItem key={transaction._id}>
-                  <Link to={"/transaction/" + transaction._id}>
-                    <strong>
-                      {transaction.name} in {transaction.location} for {transaction.price}
-                    </strong>
+          <Card style={{ width: '18rem' }}>
+            <Card.Title>Things I Have Planned</Card.Title>
 
-                  </Link>
-                  <TransactionDeleteBtn onClick={() => deleteTransaction(transaction._id)} />
-                </ListItem>
-              ))}
-            </TransactionList>
-          ) : (
-              <h5>Nothing Planned Yet...</h5>
-            )}
+            {transactions.length ? (
+              <TransactionList>
+                {transactions.map(transaction => (
+                  <ListItem key={transaction._id}>
+                    <Link to={"/transaction/" + transaction._id}>
+                      <strong>
+                        {transaction.name} in {transaction.location} for {transaction.price} on {transaction.dates}
+                      </strong>
+
+                    </Link>
+                    <TransactionDeleteBtn onClick={() => deleteTransaction(transaction._id)} />
+                  </ListItem>
+                ))}
+              </TransactionList>
+            ) : (
+                <h5>Nothing Planned Yet...</h5>
+              )}
+          </Card>
         </div>
         <div className="col-lg-2">
-        <h4 />
-          <h3>Total Cost </h3>
-            
+          <Card style={{ width: '18rem' }}>
+            <Card.Title>Total Cost </Card.Title>
             <p> Total Cost: ${totalPrice} </p>
+          </Card>
         </div>
-        
       </div>
     </div>
   );
