@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react"
 import transaction from "../../utils/transaction"
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/TransactionGrid";
 import { TransactionList, ListItem } from "../../components/TransactionList";
 import { Input, TextArea, FormBtn } from "../../components/TransactionForm";
-import TransactionJumbotron from "../../components/TransactionJumbotron";
 import TransactionDeleteBtn from "../../components/TransactionDeleteBtn";
 import "../Budget/index.css"
 
@@ -66,12 +64,12 @@ function Budget() {
     }
   };
   return (
-    <Container fluid>
-      <Row>
-        <Col size="md-4">
-          <TransactionJumbotron>
+    <div>
+      <div className="row">
+        <div className="col-lg-5">
+          <h4 />
             <h3>What Should I do on Vacation?</h3>
-          </TransactionJumbotron>
+          
           <form>
             <Input
               onChange={handleInputChange}
@@ -95,11 +93,11 @@ function Budget() {
               Submit
               </FormBtn>
           </form>
-        </Col>
-        <Col size="md-4 sm-12">
-          <TransactionJumbotron>
+        </div>
+        <div className="col-lg-5">
+        <h4 />
             <h3>Things I Have Planned</h3>
-          </TransactionJumbotron>
+          
           {transactions.length ? (
             <TransactionList>
               {transactions.map(transaction => (
@@ -115,18 +113,18 @@ function Budget() {
               ))}
             </TransactionList>
           ) : (
-              <h1>Nothing Planned Yet...</h1>
+              <h5>Nothing Planned Yet...</h5>
             )}
-        </Col>
-        <Col size="md-4 sm-12">
-          <TransactionJumbotron>
+        </div>
+        <div className="col-lg-2">
+        <h4 />
           <h3>Total Cost </h3>
-             </TransactionJumbotron>
-            <p> Total Cost: {totalPrice} </p>
-        </Col>
+            
+            <p> Total Cost: ${totalPrice} </p>
+        </div>
         
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 }
 
