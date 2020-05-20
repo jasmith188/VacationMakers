@@ -42,42 +42,42 @@ function ProtectedRoute() {
     }, []);
 
     return (
-        <div>
+        <div className="private-container">
             <div className="alert alert-success" role="alert">
                 Success, You are logged in
 				</div>
             <Card title="ITINERARY">
             </Card>
-            
-            <div className="container">
-            <div className="row">
-                <div className="col-lg-12">
-                    <Budget />
-                </div>
-            </div >
-            <div className="row">
-                <div className="col-lg-6">
-                    Restaurants
-                    <Restaurant />
-                </div>
 
-                <div className="col-lg-6">
-                    Flights
-                    <Flight />
+            <div className="container">
+                <div className="row">
+                    <div>
+                        <Budget />
+                    </div>
+                </div >
+                <div className="row">
+                    <div className="col-lg-6">
+                        <h3>Restaurants</h3>
+                        <Restaurant />
+                    </div>
+
+                    <div className="col-lg-6">
+                        <h3>Flights</h3>
+                        <Flight />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-6">
+                        <h3>Attractions</h3>
+                        <Attractions />
+                    </div>
+                    <div className="col-lg-6">
+                        <h3>Hotels</h3>
+                        <Hotel />
+                    </div>
                 </div>
             </div>
-            <div className="row">
-                <div className="col-lg-6">
-                    Attractions
-                    <Attractions />
-                </div>
-                <div className="col-lg-6">
-                    Hotels
-                    <Hotel />
-                </div>
-            </div>
-            </div>
-            
+
         </div >
 
 
