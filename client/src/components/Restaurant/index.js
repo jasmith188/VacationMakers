@@ -46,8 +46,8 @@ class Restaurant extends React.Component {
                         <ul>
                             {this.state.posts.map(post =>
                                 
-                                <h5 key={post.location_id}>{post.location} | {post.name} | ${post.price}  </h5>
-                                // <img src= {post.photo.images.small.url }alt=""></img>
+                                <h5  key={post.location_id}><img style={{height: "70px", width: "70px"}} src= {post.image} alt=""></img>   {post.location} | {post.name} | ${post.price}    
+                                </h5>
                                 
                             )}
                         </ul>

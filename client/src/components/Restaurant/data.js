@@ -9,7 +9,8 @@ const postData =
         "location_id": "355665786",
         "name": "Golden Palace", 
         "location": "Orlando",
-        "price": 100
+        "price": 100,
+        "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
     },{
         "location_id": "355665786",
         "name": "Blind Pig", 
