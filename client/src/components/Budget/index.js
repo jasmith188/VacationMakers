@@ -12,6 +12,7 @@ function Budget() {
   // Setting our component's initial state
   const [transactions, setTransactions] = useState([])
   const [formObject, setFormObject] = useState({})
+ const [totalPrice, setTotalPrice] = useState(0)
 
   // Load all transactions and store them with setBooks
   useEffect(() => {
@@ -22,7 +23,14 @@ function Budget() {
   function loadTransactions() {
     transaction.getTransactions()
       .then(res =>{
+        let total = 0;
         console.log("TEST" + res.data);
+        res.data.forEach(item => {
+          total += parseInt(item.price)
+        })
+        console.log(total)
+        setTotalPrice(total)
+
         setTransactions(res.data)}
        
       )
@@ -97,8 +105,9 @@ function Budget() {
                 <ListItem key={transaction._id}>
                     <Link to={"/transaction/" + transaction._id}>
                       <strong>
-                        {transaction.name} in {transaction.location} for {transaction.price}
+                        {transaction.name} in {transaction.location} for {transaction.price} 
                       </strong>
+
                     </Link>
                     <TransactionDeleteBtn onClick={() =>  deleteTransaction(transaction._id)} />
                   </ListItem>
@@ -107,6 +116,9 @@ function Budget() {
           ) : (
               <h3>Nothing Planned Yet...</h3>
             )}
+        </Col>
+        <Col size="md-12">
+        <p> total cost {totalPrice}</p> 
         </Col>
       </Row>
     </Container>
