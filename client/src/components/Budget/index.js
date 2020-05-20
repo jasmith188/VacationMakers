@@ -12,7 +12,7 @@ function Budget() {
   // Setting our component's initial state
   const [transactions, setTransactions] = useState([])
   const [formObject, setFormObject] = useState({})
- const [totalPrice, setTotalPrice] = useState(0)
+  const [totalPrice, setTotalPrice] = useState(0)
 
   // Load all transactions and store them with setBooks
   useEffect(() => {
@@ -22,7 +22,7 @@ function Budget() {
   // Loads all transactions and sets them to transactions
   function loadTransactions() {
     transaction.getTransactions()
-      .then(res =>{
+      .then(res => {
         let total = 0;
         console.log("TEST" + res.data);
         res.data.forEach(item => {
@@ -31,8 +31,9 @@ function Budget() {
         console.log(total)
         setTotalPrice(total)
 
-        setTransactions(res.data)}
-       
+        setTransactions(res.data)
+      }
+
       )
       .catch(err => console.log(err));
   };
@@ -67,23 +68,23 @@ function Budget() {
   return (
     <Container fluid>
       <Row>
-        <Col size="md-6">
+        <Col size="md-4">
           <TransactionJumbotron>
-            <h1>What Should I do on Vacation?</h1>
+            <h3>What Should I do on Vacation?</h3>
           </TransactionJumbotron>
           <form>
             <Input
-              onChange= {handleInputChange}
+              onChange={handleInputChange}
               name="name"
               placeholder="Name"
             />
             <Input
-              onChange= {handleInputChange}
+              onChange={handleInputChange}
               name="location"
               placeholder="Location"
             />
             <Input
-              onChange={handleInputChange }
+              onChange={handleInputChange}
               name="price"
               placeholder="Price"
             />
@@ -95,31 +96,35 @@ function Budget() {
               </FormBtn>
           </form>
         </Col>
-        <Col size="md-6 sm-12">
+        <Col size="md-4 sm-12">
           <TransactionJumbotron>
-            <h1>Things I Have Planned</h1>
+            <h3>Things I Have Planned</h3>
           </TransactionJumbotron>
           {transactions.length ? (
             <TransactionList>
               {transactions.map(transaction => (
                 <ListItem key={transaction._id}>
-                    <Link to={"/transaction/" + transaction._id}>
-                      <strong>
-                        {transaction.name} in {transaction.location} for {transaction.price} 
-                      </strong>
+                  <Link to={"/transaction/" + transaction._id}>
+                    <strong>
+                      {transaction.name} in {transaction.location} for {transaction.price}
+                    </strong>
 
-                    </Link>
-                    <TransactionDeleteBtn onClick={() =>  deleteTransaction(transaction._id)} />
-                  </ListItem>
-                ))}
+                  </Link>
+                  <TransactionDeleteBtn onClick={() => deleteTransaction(transaction._id)} />
+                </ListItem>
+              ))}
             </TransactionList>
           ) : (
-              <h3>Nothing Planned Yet...</h3>
+              <h1>Nothing Planned Yet...</h1>
             )}
         </Col>
-        <Col size="md-12">
-        <p> total cost {totalPrice}</p> 
+        <Col size="md-4 sm-12">
+          <TransactionJumbotron>
+          <h3>Total Cost </h3>
+             </TransactionJumbotron>
+            <p> Total Cost: {totalPrice} </p>
         </Col>
+        
       </Row>
     </Container>
   );
