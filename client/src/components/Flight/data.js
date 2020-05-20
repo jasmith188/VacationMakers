@@ -2,39 +2,46 @@ const postData =
 [
     {
         "location_id": "355665786",
-         "name": "Stoneliegh Hotel", 
-         "location": "Fort Meyers",
-         "price": 60
+         "name": "MCO to ORD", 
+         "date": "09-05-20/09-12-20",
+         "location": "Chicago",
+         "price": 300
     },{
         "location_id": "355665786",
-        "name": "Pine Bay Resort", 
-        "location": "Miami",
-        "price": 40
+        "name": "MCO to ORD", 
+        "date": "09-05-20/09-12-20",
+        "location": "Charlotte",
+        "price": 440
     },{
         "location_id": "355665786",
-        "name": "Carson & Coil", 
-        "location": "Cape Coral",
+        "name": "MCO to ORD",
+        "date": "09-05-20/09-12-20",
+        "location": "Baltimore",
         "price": 210
     },{
         "location_id": "355665786",
-        "name": "Maritime Inn", 
-        "location": "New Smyrna Beach",
-        "price": 90
+        "name": "MCO to ORD",
+        "date": "09-05-20/09-12-20",
+        "location": "Phoenix",
+        "price": 390
     },{
         "location_id": "355665786",
-        "name": "Hilton at Fort Meyers", 
-        "location": "Ormond Beach",
-        "price": 160
+        "name": "MCO to ORD",
+        "date": "09-05-20/09-12-20",
+        "location": "Roanoke",
+        "price": 460
     },{
         "location_id": "355665786",
-        "name": "Hyatt Downtown", 
-        "location": "Sarasota",
-        "price": 120
+        "name": "MCO to ORD",
+        "date": "09-05-20/09-12-20",
+        "location": "Seattle",
+        "price": 420
     },{
         "location_id": "355665786",
-        "name": "Mama's Bed & Breakfast", 
-        "location": "Fort Lauderdale",
-        "price": 260
+        "name": "MCO to ORD",
+        "date": "09-05-20/09-12-20",
+        "location": "Honolulu",
+        "price": 560
     }
 ]
 
