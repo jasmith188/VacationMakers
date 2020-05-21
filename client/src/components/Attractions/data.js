@@ -2,8 +2,8 @@ const postData =
 [
     {
         "location_id": "355665786",
-         "name": "Stoneliegh Hotel", 
-         "location": "Fort Meyers",
+         "name": "Magic Kingdom", 
+         "location": "Orlando",
          "price": 60
     },{
         "location_id": "355665786",

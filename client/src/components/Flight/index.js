@@ -43,7 +43,7 @@ class Flight extends React.Component {
                         <Card.Text>
                             {this.state.posts.map(post =>
 
-                                <div key={post.location_id} onClick={this.onclick}> {post.origin} to {post.destination} | {post.name} | ${post.price} {post.date}
+                                <div key={post.location_id} onClick={this.onclick}> {post.origin} to {post.destination} for  ${post.price} on {post.departure} to {post.arrival}
                                 </div>
 
                             )}

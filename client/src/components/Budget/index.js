@@ -69,7 +69,7 @@ function Budget(props) {
   return (
     <div>
       <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-5">
 
           <div className="card">
             <Form className="budget-form">
@@ -78,8 +78,18 @@ function Budget(props) {
                 <Form.Label as="h4">Type in the correct information from above</Form.Label>
                 <Input
                   onChange={handleInputChange}
-                  name="date"
-                  placeholder="Date of Departure and Arrival e.g.: 06-20-20/06-27-20"
+                  name="departure"
+                  placeholder="Date of Departure e.g.: 06-20-20"
+                />
+                
+                
+              </Form.Group>
+
+              <Form.Group controlId="formBasicEmail">
+                <Input
+                  onChange={handleInputChange}
+                  name="arrival"
+                  placeholder="Date of Arrival e.g.: 06-27-20"
                 />
                 
                 
@@ -137,13 +147,7 @@ function Budget(props) {
     </Form.Text>
               </Form.Group>
 
-              <Form.Group controlId="formBasicPassword">
-                <Input
-                  onChange={handleInputChange}
-                  name="dates"
-                  placeholder="Dates (Optional)"
-                />
-              </Form.Group>
+              
               <FormBtn
                 disabled={!(formObject.name && formObject.location)}
                 onClick={handleFormSubmit}
@@ -162,9 +166,9 @@ function Budget(props) {
                 {transactions.map(transaction => (
                   <ListItem key={transaction._id}>
                     <div to={"/transaction/" + transaction._id}>
-                      <strong>
-                        On {transaction.date} at {transaction.name} {transaction.name} in {transaction.location} {transaction.destination} for {transaction.price} on {transaction.dates}
-                      </strong>
+                     
+                        On {transaction.departure} at {transaction.arrival} {transaction.name} in {transaction.location} {transaction.destination} for ${transaction.price}  
+                     
 
                     </div>
                     <TransactionDeleteBtn onClick={() => deleteTransaction(transaction._id)} />
@@ -182,7 +186,7 @@ function Budget(props) {
               </ListGroup>
           </Card>
         </div>
-        <div className="col-4">
+        <div className="col-3">
           <div className="card">
             <h4>The Total Cost Of Your Trip  </h4>
             <p> Total Cost: ${totalPrice} </p>
