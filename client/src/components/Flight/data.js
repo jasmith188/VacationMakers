@@ -3,7 +3,8 @@ const postData =
     {
         "location_id": "355660985786",
          "name": "MCO to ORD", 
-         "date": "09-05-20/09-12-20",
+         "departure": "09-05-2020",
+         "arrival": "09-12-2020",
          "origin": "Orlando",
          "destination":"Chicago",
          "price": 300

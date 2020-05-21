@@ -47,9 +47,9 @@ function Nav() {
         <ul className="navbar-nav ml-auto">
           <li className="nav-item ">
             {/* <Link style={buttonStyle} className=" btn btn-secondary" to="/public">Public Page</Link> */}
-            <Link style={buttonStyle} className="btn btn-danger" to="/protected">Protected Page</Link>
+            <Link style={buttonStyle} className="btn btn-info" to="/protected">Main Page</Link>
             {user.username ? "" :
-              <Link style={buttonStyle} className="btn btn-warning" to="/register">Register a New User</Link>
+              <Link style={buttonStyle} className="btn btn-light" to="/register">Register a New User</Link>
             }
             <AuthButton />
           </li>
