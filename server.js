@@ -60,7 +60,7 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 /* === Mongoose Connection === */
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern_authenticate_me', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:password11@ds233806.mlab.com:33806/heroku_79q0jlfn', { useNewUrlParser: true, useUnifiedTopology: true });
 
 /* === Error Handling === */
 
