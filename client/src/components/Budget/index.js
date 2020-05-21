@@ -60,7 +60,12 @@ function Budget(props) {
       transaction.saveTransaction({
         name: formObject.name,
         location: formObject.location,
-        price: formObject.price
+        price: formObject.price,
+        departure: formObject.departure,
+        arrival: formObject.arrival,
+        origin: formObject.origin,
+        destination: formObject.destination
+
       })
         .then(res => loadTransactions())
         .catch(err => console.log(err));
@@ -167,7 +172,7 @@ function Budget(props) {
                   <ListItem key={transaction._id}>
                     <div to={"/transaction/" + transaction._id}>
                      
-                        On {transaction.departure} at {transaction.arrival} {transaction.name} in {transaction.location} {transaction.destination} for ${transaction.price}  
+                        On {transaction.departure} at {transaction.arrival} {transaction.name} in {transaction.location} to {transaction.destination} for ${transaction.price}  
                      
 
                     </div>
