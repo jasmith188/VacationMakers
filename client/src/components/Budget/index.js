@@ -68,7 +68,7 @@ function Budget(props) {
   return (
     <div>
       <div className="row">
-        <div className="col-lg-5">
+        <div className="col-lg-4">
 
           <div className="card">
             <h3>What Should I do on Vacation?</h3>
@@ -76,17 +76,17 @@ function Budget(props) {
               <Input
                 onChange={handleInputChange}
                 name="name"
-                placeholder="Name of an hotel, restaurant, airport or attraction"
+                placeholder="Name of hotel, restaurant, airport or attraction"
               />
               <Input
                 onChange={handleInputChange}
                 name="location"
-                placeholder="Location"
+                placeholder="Location of where your activity is"
               />
               <Input
                 onChange={handleInputChange}
                 name="price"
-                placeholder="Price"
+                placeholder="Price of your "
               />
               <Input
                 onChange={handleInputChange}
@@ -101,8 +101,8 @@ function Budget(props) {
               </FormBtn>
             </form>
           </div>
-      </div>
-        <div className="col-lg-5">
+        </div>
+        <div className="col-lg-4">
           <div className="card">
             <h3>Things I Have Planned</h3>
 
@@ -119,29 +119,25 @@ function Budget(props) {
                     <TransactionDeleteBtn onClick={() => deleteTransaction(transaction._id)} />
                   </ListItem>
                 ))}
-                
-                  <div>
-                    {props.userAddedRestaurant}
-                  </div>
-             
-              
-              </TransactionList>
-              
+
+                <div>
+                  {props.userAddedRestaurant}
+                </div>
+                </TransactionList>
+
             ) : (
                 <h5>Nothing Planned Yet...</h5>
               )}
           </div>
         </div>
-      
-     
-        <div className="col-lg-2">
+        <div className="col-4">
           <div className="card">
-            <h3>Total Cost </h3>
+            <h4>The Total Cost Of Your Trip  </h4>
             <p> Total Cost: ${totalPrice} </p>
           </div>
         </div>
 
-        </div>
+      </div>
     </div >
   );
 }

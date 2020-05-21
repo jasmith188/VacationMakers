@@ -1,5 +1,6 @@
 import React from 'react';
 // import axios from 'axios';
+import Card from 'react-bootstrap/Card'
 import postData from "./data"
 
 class Attractions extends React.Component {
@@ -43,16 +44,20 @@ class Attractions extends React.Component {
 
         return (
             <div>
-                <div className="card-body">
-                    <div className="card">
-                        <ul>
+                <Card>
+                    <Card.Header as="h5">Atrractions and Things to do</Card.Header>
+                    <Card.Body>
+                        <Card.Title>Pick an activity to do, location and price</Card.Title>
+                        <Card.Text>
                             {this.state.posts.map(post =>
-                                <h5 key={post.location_id}>{post.location} | {post.name} | ${post.price}  </h5>
-                            )}
-                        </ul>
-                    </div>
 
-                </div>
+                                <div key={post.location_id} onClick={this.onclick}>  {post.location} | {post.name} | ${post.price}
+                                </div>
+
+                            )}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
 
             </div>
         );
