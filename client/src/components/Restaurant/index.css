@@ -1,4 +1,5 @@
 .restaurants-card {
-    border-color: darkblue;
+    /* border-color: darkblue; */
+    border-width: thick;
     
 }
