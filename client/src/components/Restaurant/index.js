@@ -1,21 +1,23 @@
 import React from 'react';
 import axios from 'axios';
 import postData from "./data";
+import Card from 'react-bootstrap/Card'
+import "./index.css"
 
 class Restaurant extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
             posts: postData
-            
+
         };
 
-        this.onclick= this.onclick.bind(this)
+        this.onclick = this.onclick.bind(this)
     }
-    
-    onclick(event){
-       this.props.onclick(event)
+
+    onclick(event) {
+        this.props.onclick(event)
 
     }
 
@@ -46,25 +48,26 @@ class Restaurant extends React.Component {
         // .catch((error) => {
         //     console.log(error)
         // })
-}
+    }
 
     render() {
 
         return (
             <div>
-                <div className="card-body">
-                    <div className="card">
-                        <ul>
+                <Card className="restaurants-card">
+                    <Card.Header as="h5">Restaurants</Card.Header>
+                    <Card.Body>
+                        <Card.Title>Choose a Restaurant location, name and price</Card.Title>
+                        <Card.Text>
                             {this.state.posts.map(post =>
-                                
-                                <h5  key={post.location_id} onClick={this.onclick}><img style={{height: "70px", width: "70px"}} src= {post.image} alt=""></img>   {post.location} | {post.name} | ${post.price}    
-                                </h5>
-                                
-                            )}
-                        </ul>
-                    </div>
 
-                </div>
+                                <div key={post.location_id} onClick={this.onclick}>  {post.location} | {post.name} | ${post.price}
+                                </div>
+
+                            )}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
 
             </div>
         );
@@ -72,3 +75,5 @@ class Restaurant extends React.Component {
 }
 
 export default Restaurant
+
+

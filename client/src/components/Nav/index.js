@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../components/Nav";
-// import Login from "../LoginForm";
+import Login from "../LoginForm";
 import AuthButton from "../AuthButton";
 import { UserContext } from "../../utils/UserContext";
 //I want to add some basic inline styling here, even though we are bringing in styles
@@ -47,7 +47,7 @@ function Nav() {
         <ul className="navbar-nav ml-auto">
           <li className="nav-item ">
             {/* <Link style={buttonStyle} className=" btn btn-secondary" to="/public">Public Page</Link> */}
-            {/* <Link style={buttonStyle} className="btn btn-danger" to="/protected">Protected Page</Link> */}
+            <Link style={buttonStyle} className="btn btn-danger" to="/protected">Protected Page</Link>
             {user.username ? "" :
               <Link style={buttonStyle} className="btn btn-warning" to="/register">Register a New User</Link>
             }

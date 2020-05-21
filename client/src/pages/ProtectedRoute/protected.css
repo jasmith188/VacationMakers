@@ -4,7 +4,8 @@
     font-weight: bold;
 }
 
-.private-container {
-    background-image: url("/client/public/images/airplane.jpg");
+.protected-container {
+    background-color: white;
     background-size: cover;
+  
 }

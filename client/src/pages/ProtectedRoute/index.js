@@ -1,5 +1,4 @@
 import React, { useEffect, useContext, useState } from 'react'
-import "../ProtectedRoute/protected.css"
 import Card from "../../components/Card"
 import { UserContext } from "../../utils/UserContext";
 import Hotel from "../../components/Hotel/index";
@@ -50,37 +49,38 @@ function ProtectedRoute() {
     }
 
     return (
-        <div className="private-container">
+        <div className="protected-container">
             {/* <div className="alert alert-success" role="alert">
                 Success, You are logged in
 				</div> */}
-            <Card title="Choose from a Category below and add it to your itinerary">
+            <Card title="Choose From A Category Below And Add It To Your Itinerary">
             </Card>
 
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6">
-                        <h3>Restaurants</h3>
+                        
                         <Restaurant onclick={restaurantOnclick}/>
                     </div>
                     <div className="col-lg-6">
-                        <h3>Flights</h3>
+                       
                         <Flight />
                     </div>
                 </div >
                 <div className="row">
                     <div className="col-lg-6">
-                        <h3>Attractions</h3>
+                      
                         <Attractions />
                     </div>
                     <div className="col-lg-6">
-                        <h3>Hotels</h3>
+                        
                         <Hotel />
                     </div>
 
                 </div>
                 <div className="row">
                     <div>
+                        <br/>
                         <Budget />
                     </div>
                 </div>

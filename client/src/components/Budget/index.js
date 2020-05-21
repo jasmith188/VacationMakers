@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react"
 import transaction from "../../utils/transaction"
 import Card from 'react-bootstrap/Card'
-import CardGroup from 'react-bootstrap/CardGroup'
+import Form from 'react-bootstrap/Form'
+import ListGroup from 'react-bootstrap/ListGroup'
 import { Link } from "react-router-dom";
 import { TransactionList, ListItem } from "../../components/TransactionList";
 import { Input, TextArea, FormBtn } from "../../components/TransactionForm";
@@ -68,44 +69,61 @@ function Budget(props) {
   return (
     <div>
       <div className="row">
-        <div className="col-lg-5">
+        <div className="col-lg-4">
 
           <div className="card">
-            <h3>What Should I do on Vacation?</h3>
-            <form>
-              <Input
-                onChange={handleInputChange}
-                name="name"
-                placeholder="Name of an hotel, restaurant, airport or attraction"
-              />
-              <Input
-                onChange={handleInputChange}
-                name="location"
-                placeholder="Location"
-              />
-              <Input
-                onChange={handleInputChange}
-                name="price"
-                placeholder="Price"
-              />
-              <Input
-                onChange={handleInputChange}
-                name="dates"
-                placeholder="Dates (Optional)"
-              />
+            <Form className="budget-form">
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label as="h4">Type in the correct information from above</Form.Label>
+                <Input
+                  onChange={handleInputChange}
+                  name="name"
+                  placeholder="Name of hotel, restaurant, airport or attraction"
+                />
+                
+              </Form.Group>
+
+              <Form.Group controlId="formBasicEmail">
+                
+                <Input
+                  onChange={handleInputChange}
+                  name="location"
+                  placeholder="Location of where your activity is"
+                />
+                
+              </Form.Group>
+
+              <Form.Group controlId="formBasicEmail">
+                <Input
+                  onChange={handleInputChange}
+                  name="price"
+                  placeholder="Price of what you chose"
+                />
+                <Form.Text className="text-muted">
+                  (Restaurant prices are an estimate of two guests including gratuity).
+    </Form.Text>
+              </Form.Group>
+
+              <Form.Group controlId="formBasicPassword">
+                <Input
+                  onChange={handleInputChange}
+                  name="dates"
+                  placeholder="Dates (Optional)"
+                />
+              </Form.Group>
               <FormBtn
                 disabled={!(formObject.name && formObject.location)}
                 onClick={handleFormSubmit}
               >
                 Submit
               </FormBtn>
-            </form>
+            </Form>
           </div>
-      </div>
-        <div className="col-lg-5">
-          <div className="card">
-            <h3>Things I Have Planned</h3>
-
+        </div>
+        <div className="col-lg-4">
+        <Card style={{ width: '18rem' }}>
+        <Card.Header as="h4">Things I have planned for this vacation</Card.Header>
+        <ListGroup variant="flush">
             {transactions.length ? (
               <TransactionList>
                 {transactions.map(transaction => (
@@ -119,29 +137,26 @@ function Budget(props) {
                     <TransactionDeleteBtn onClick={() => deleteTransaction(transaction._id)} />
                   </ListItem>
                 ))}
-                
-                  <div>
-                    {props.userAddedRestaurant}
-                  </div>
-             
-              
+
+                <div>
+                  {props.userAddedRestaurant}
+                </div>
               </TransactionList>
-              
+
             ) : (
                 <h5>Nothing Planned Yet...</h5>
               )}
-          </div>
+              </ListGroup>
+          </Card>
         </div>
-      
-     
-        <div className="col-lg-2">
+        <div className="col-4">
           <div className="card">
-            <h3>Total Cost </h3>
+            <h4>The Total Cost Of Your Trip  </h4>
             <p> Total Cost: ${totalPrice} </p>
           </div>
         </div>
 
-        </div>
+      </div>
     </div >
   );
 }
