@@ -6,6 +6,7 @@ import Restaurant from "../../components/Restaurant"
 import Attractions from "../../components/Attractions"
 import Flight from "../../components/Flight"
 import Budget from "../../components/Budget"
+import Footer from "../../components/Footer"
 import "../ProtectedRoute/protected.css"
 
 
@@ -84,6 +85,7 @@ function ProtectedRoute() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div >
 
 
