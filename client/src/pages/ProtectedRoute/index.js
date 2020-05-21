@@ -50,9 +50,6 @@ function ProtectedRoute() {
 
     return (
         <div className="protected-container">
-            {/* <div className="alert alert-success" role="alert">
-                Success, You are logged in
-				</div> */}
             <Card title="Choose From A Category Below And Add It To Your Itinerary">
             </Card>
 
@@ -67,7 +64,9 @@ function ProtectedRoute() {
                         <Flight />
                     </div>
                 </div >
+                <br />
                 <div className="row">
+                   
                     <div className="col-lg-6">
                       
                         <Attractions />
