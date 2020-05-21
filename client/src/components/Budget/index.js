@@ -73,13 +73,26 @@ function Budget(props) {
 
           <div className="card">
             <Form className="budget-form">
+
               <Form.Group controlId="formBasicEmail">
                 <Form.Label as="h4">Type in the correct information from above</Form.Label>
+                <Input
+                  onChange={handleInputChange}
+                  name="date"
+                  placeholder="Date of Departure and Arrival e.g.: 06-20-20/06-27-20"
+                />
+                
+                
+              </Form.Group>
+
+              <Form.Group controlId="formBasicEmail">
+               
                 <Input
                   onChange={handleInputChange}
                   name="name"
                   placeholder="Name of hotel, restaurant, airport or attraction"
                 />
+                
                 
               </Form.Group>
 
@@ -89,6 +102,26 @@ function Budget(props) {
                   onChange={handleInputChange}
                   name="location"
                   placeholder="Location of where your activity is"
+                />
+                
+              </Form.Group>
+
+              <Form.Group controlId="formBasicEmail">
+                
+                <Input
+                  onChange={handleInputChange}
+                  name="origin"
+                  placeholder="Departure of Flight (Flights only)"
+                />
+                
+              </Form.Group>
+
+              <Form.Group controlId="formBasicEmail">
+                
+                <Input
+                  onChange={handleInputChange}
+                  name="destination"
+                  placeholder="Destination of Flight (Flights only)"
                 />
                 
               </Form.Group>
@@ -128,12 +161,12 @@ function Budget(props) {
               <TransactionList>
                 {transactions.map(transaction => (
                   <ListItem key={transaction._id}>
-                    <Link to={"/transaction/" + transaction._id}>
+                    <div to={"/transaction/" + transaction._id}>
                       <strong>
-                        {transaction.name} in {transaction.location} for {transaction.price} on {transaction.dates}
+                        On {transaction.date} at {transaction.name} {transaction.name} in {transaction.location} {transaction.destination} for {transaction.price} on {transaction.dates}
                       </strong>
 
-                    </Link>
+                    </div>
                     <TransactionDeleteBtn onClick={() => deleteTransaction(transaction._id)} />
                   </ListItem>
                 ))}
