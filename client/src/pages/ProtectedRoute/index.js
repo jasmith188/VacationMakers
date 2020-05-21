@@ -46,7 +46,7 @@ function ProtectedRoute() {
             {/* <div className="alert alert-success" role="alert">
                 Success, You are logged in
 				</div> */}
-            <Card title="ITINERARY">
+            <Card title="Choose from a Category below and add it to your itinerary">
             </Card>
 
             <div className="container">
