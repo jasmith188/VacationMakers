@@ -43,29 +43,23 @@ function ProtectedRoute() {
 
     return (
         <div className="private-container">
-            <div className="alert alert-success" role="alert">
+            {/* <div className="alert alert-success" role="alert">
                 Success, You are logged in
-				</div>
+				</div> */}
             <Card title="ITINERARY">
             </Card>
 
             <div className="container">
                 <div className="row">
-                    <div>
-                        <Budget />
-                    </div>
-                </div >
-                <div className="row">
                     <div className="col-lg-6">
                         <h3>Restaurants</h3>
                         <Restaurant />
                     </div>
-
                     <div className="col-lg-6">
                         <h3>Flights</h3>
                         <Flight />
                     </div>
-                </div>
+                </div >
                 <div className="row">
                     <div className="col-lg-6">
                         <h3>Attractions</h3>
@@ -75,9 +69,14 @@ function ProtectedRoute() {
                         <h3>Hotels</h3>
                         <Hotel />
                     </div>
+
+                </div>
+                <div className="row">
+                    <div>
+                        <Budget />
+                    </div>
                 </div>
             </div>
-
         </div >
 
 

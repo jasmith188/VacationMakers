@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import transaction from "../../utils/transaction"
-import Card from 'react-bootstrap/Card'
+import  Card  from 'react-bootstrap/Card'
+import CardDeck from 'react-bootstrap/CardDeck'
 import { Link } from "react-router-dom";
 import { TransactionList, ListItem } from "../../components/TransactionList";
 import { Input, TextArea, FormBtn } from "../../components/TransactionForm";
@@ -66,6 +67,7 @@ function Budget() {
   };
   return (
     <div>
+      <CardDeck>
       <div className="row">
         <div className="col-lg-5">
           <Card style={{ width: '18rem' }}>
@@ -130,6 +132,7 @@ function Budget() {
           </Card>
         </div>
       </div>
+      </CardDeck>
     </div>
   );
 }

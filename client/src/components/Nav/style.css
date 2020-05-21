@@ -1,10 +1,6 @@
 .navbar {
-  border-radius: 0;
+  border-radius: 40;
+  
 }
 
-.navbar-brand{
-  background-color: blue;
-}
-nav{
-  background-color: blue;
-}
+
