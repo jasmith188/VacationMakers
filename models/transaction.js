@@ -16,7 +16,23 @@ const transactionSchema = new Schema(
     price: {
       type: String,
       required: "Enter a price"
-    }
+    },
+    departure: {
+      type: String,
+      required: "Enter a price"
+    },
+    arrival: {
+      type: String,
+      required: "Enter a price"
+    },
+    origin: {
+      type: String,
+      required: "Enter a price"
+    },
+    destination: {
+      type: String,
+      required: "Enter a price"
+    },
   }
 );
 
