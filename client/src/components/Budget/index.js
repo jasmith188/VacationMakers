@@ -7,7 +7,7 @@ import { Input, TextArea, FormBtn } from "../../components/TransactionForm";
 import TransactionDeleteBtn from "../../components/TransactionDeleteBtn";
 import "../Budget/index.css"
 
-function Budget() {
+function Budget(props) {
   // Setting our component's initial state
   const [transactions, setTransactions] = useState([])
   const [formObject, setFormObject] = useState({})
@@ -117,7 +117,14 @@ function Budget() {
                     <TransactionDeleteBtn onClick={() => deleteTransaction(transaction._id)} />
                   </ListItem>
                 ))}
+                
+                  <div>
+                    {props.userAddedRestaurant}
+                  </div>
+             
+              
               </TransactionList>
+              
             ) : (
                 <h5>Nothing Planned Yet...</h5>
               )}
