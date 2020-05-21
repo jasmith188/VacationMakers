@@ -59,14 +59,6 @@ function ProtectedRoute() {
 
             <div className="container">
                 <div className="row">
-
-
-                    <div>
-                        <Budget userAddedRestaurant={restaurant}/>
-                    </div>
-                </div >
-                <div className="row">
-
                     <div className="col-lg-6">
                         <h3>Restaurants</h3>
                         <Restaurant onclick={restaurantOnclick}/>
