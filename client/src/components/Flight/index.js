@@ -2,6 +2,7 @@ import React from 'react';
 // import axios from 'axios';
 import Card from 'react-bootstrap/Card'
 import postData from "./data"
+import "./index.css"
 
 class Flight extends React.Component {
     state = {
@@ -35,7 +36,7 @@ class Flight extends React.Component {
 
         return (
             <div>
-                <Card>
+                <Card className="flight-card">
                     <Card.Header as="h5">Flight</Card.Header>
                     <Card.Body>
                         <Card.Title>Pick a Flight departure, return and price</Card.Title>

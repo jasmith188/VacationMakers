@@ -80,6 +80,7 @@ function ProtectedRoute() {
                 </div>
                 <div className="row">
                     <div>
+                        <br/>
                         <Budget />
                     </div>
                 </div>

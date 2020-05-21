@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import postData from "./data";
 import Card from 'react-bootstrap/Card'
+import "./index.css"
 
 class Restaurant extends React.Component {
     constructor(props) {
@@ -53,7 +54,7 @@ class Restaurant extends React.Component {
 
         return (
             <div>
-                <Card>
+                <Card className="restaurants-card">
                     <Card.Header as="h5">Restaurants</Card.Header>
                     <Card.Body>
                         <Card.Title>Choose a Restaurant location, name and price</Card.Title>

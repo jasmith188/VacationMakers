@@ -2,6 +2,7 @@ import React from 'react';
 // import axios from 'axios';
 import Card from 'react-bootstrap/Card'
 import postData from "./data"
+import "./index.css"
 
 class HotelAPI extends React.Component {
     state = {
@@ -44,7 +45,7 @@ class HotelAPI extends React.Component {
 
         return (
             <div>
-                <Card>
+                <Card className="hotel-card">
                     <Card.Header as="h5">Hotels</Card.Header>
                     <Card.Body>
                         <Card.Title>Pick a Hotel location, name and price</Card.Title>
