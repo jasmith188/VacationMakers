@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import transaction from "../../utils/transaction"
 import Card from 'react-bootstrap/Card'
+import CardGroup from 'react-bootstrap/CardGroup'
 import { Link } from "react-router-dom";
 import { TransactionList, ListItem } from "../../components/TransactionList";
 import { Input, TextArea, FormBtn } from "../../components/TransactionForm";
@@ -68,13 +69,14 @@ function Budget(props) {
     <div>
       <div className="row">
         <div className="col-lg-5">
-          <Card style={{ width: '18rem' }}>
-            <Card.Title>What Should I do on Vacation?</Card.Title>
+
+          <div className="card">
+            <h3>What Should I do on Vacation?</h3>
             <form>
               <Input
                 onChange={handleInputChange}
                 name="name"
-                placeholder="Name"
+                placeholder="Name of an hotel, restaurant, airport or attraction"
               />
               <Input
                 onChange={handleInputChange}
@@ -98,11 +100,11 @@ function Budget(props) {
                 Submit
               </FormBtn>
             </form>
-          </Card>
-        </div>
+          </div>
+      </div>
         <div className="col-lg-5">
-          <Card style={{ width: '18rem' }}>
-            <Card.Title>Things I Have Planned</Card.Title>
+          <div className="card">
+            <h3>Things I Have Planned</h3>
 
             {transactions.length ? (
               <TransactionList>
@@ -128,16 +130,19 @@ function Budget(props) {
             ) : (
                 <h5>Nothing Planned Yet...</h5>
               )}
-          </Card>
+          </div>
         </div>
+      
+     
         <div className="col-lg-2">
-          <Card style={{ width: '18rem' }}>
-            <Card.Title>Total Cost </Card.Title>
+          <div className="card">
+            <h3>Total Cost </h3>
             <p> Total Cost: ${totalPrice} </p>
-          </Card>
+          </div>
         </div>
-      </div>
-    </div>
+
+        </div>
+    </div >
   );
 }
 
