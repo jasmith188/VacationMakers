@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import "../ProtectedRoute/protected.css"
 import Card from "../../components/Card"
 import { UserContext } from "../../utils/UserContext";
@@ -14,6 +14,7 @@ import "../ProtectedRoute/protected.css"
 /* This is a very simple component.. it probably doesn't need to be a smart component at this point but you never know what's goingto happen in the future */
 
 function ProtectedRoute() {
+    const [restaurant, setRestaurant] = useState("");
 
     const [user, dispatch] = useContext(UserContext)
     console.log(user)
@@ -41,6 +42,13 @@ function ProtectedRoute() {
 
     }, []);
 
+    const restaurantOnclick = (event) => {
+        console.log(event.currentTarget.innerText);
+      
+      
+        setRestaurant(event.currentTarget.innerText);
+    }
+
     return (
         <div className="private-container">
             {/* <div className="alert alert-success" role="alert">
@@ -53,7 +61,7 @@ function ProtectedRoute() {
                 <div className="row">
                     <div className="col-lg-6">
                         <h3>Restaurants</h3>
-                        <Restaurant />
+                        <Restaurant onclick={restaurantOnclick}/>
                     </div>
                     <div className="col-lg-6">
                         <h3>Flights</h3>

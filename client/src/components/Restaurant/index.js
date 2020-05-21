@@ -3,9 +3,20 @@ import axios from 'axios';
 import postData from "./data";
 
 class Restaurant extends React.Component {
-    state = {
-        posts: postData
-        
+    constructor(props){
+        super(props);
+
+        this.state = {
+            posts: postData
+            
+        };
+
+        this.onclick= this.onclick.bind(this)
+    }
+    
+    onclick(event){
+       this.props.onclick(event)
+
     }
 
     componentDidMount() {
@@ -46,8 +57,8 @@ class Restaurant extends React.Component {
                         <ul>
                             {this.state.posts.map(post =>
                                 
-                                <h5 key={post.location_id}>{post.location} | {post.name} | ${post.price}  </h5>
-                                // <img src= {post.photo.images.small.url }alt=""></img>
+                                <h5  key={post.location_id} onClick={this.onclick}><img style={{height: "70px", width: "70px"}} src= {post.image} alt=""></img>   {post.location} | {post.name} | ${post.price}    
+                                </h5>
                                 
                             )}
                         </ul>
