@@ -3,6 +3,8 @@ import React from 'react';
 import Card from 'react-bootstrap/Card'
 import postData from "./data"
 import "./index.css"
+import Image from 'react-bootstrap/Image'
+import hotel from "../../images/hotel.jpg"
 
 class HotelAPI extends React.Component {
     state = {
@@ -46,7 +48,9 @@ class HotelAPI extends React.Component {
         return (
             <div>
                 <Card className="hotel-card">
+                <Image src={hotel} height="200px" width="280px" />
                     <Card.Header as="h5">Hotels</Card.Header>
+                    
                     <Card.Body>
                         <Card.Title>Pick a Hotel location, name and price</Card.Title>
                         <Card.Text>

@@ -3,6 +3,8 @@ import React from 'react';
 import Card from 'react-bootstrap/Card'
 import postData from "./data"
 import "./index.css"
+import Image from 'react-bootstrap/Image'
+import castle from "../../images/castle.jpg"
 
 class Attractions extends React.Component {
     state = {
@@ -46,6 +48,7 @@ class Attractions extends React.Component {
         return (
             <div>
                 <Card className="attractions-card">
+                <Image src={castle} height="200px" width="280px" />
                     <Card.Header as="h5">Atrractions and Things to do</Card.Header>
                     <Card.Body>
                         <Card.Title>Pick an activity to do, location and price</Card.Title>
