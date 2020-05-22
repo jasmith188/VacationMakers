@@ -5,6 +5,7 @@ import postData from "./data"
 import "./index.css"
 import Image from 'react-bootstrap/Image'
 import hotel from "../../images/hotel.jpg"
+import hotel2 from "../../images/hotel2.jpg"
 
 class HotelAPI extends React.Component {
     state = {
@@ -49,7 +50,7 @@ class HotelAPI extends React.Component {
             <div>
                 <Card className="hotel-card">
                 <Image src={hotel} height="200px" width="280px" />
-                    <Card.Header as="h5">Hotels</Card.Header>
+                    <Card.Header as="h4">Hotels</Card.Header>
                     
                     <Card.Body>
                         <Card.Title>Pick a Hotel location, name and price</Card.Title>
@@ -62,6 +63,7 @@ class HotelAPI extends React.Component {
                             )}
                         </Card.Text>
                     </Card.Body>
+                    <Image className="bottom-image" src={hotel2} height="200px" width="280px" />
                 </Card>
 
             </div>

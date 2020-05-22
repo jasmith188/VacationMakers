@@ -76,7 +76,7 @@ function Budget(props) {
       <div className="row">
         <div className="col-lg-5">
 
-          <div className="card">
+          <div className="budget-card">
             <Form className="budget-form">
 
               <Form.Group controlId="formBasicEmail">

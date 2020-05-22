@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card'
 import "./index.css"
 import Image from 'react-bootstrap/Image'
 import restaurant from "../../images/restaurant.jpg"
+import restaurant2 from "../../images/restaurant2.jpg"
 
 class Restaurant extends React.Component {
     constructor(props) {
@@ -58,7 +59,7 @@ class Restaurant extends React.Component {
             <div>
                 <Card className="restaurants-card">
                 <Image src={restaurant} height="200px" width="280px" />
-                    <Card.Header img src="../../component/"as="h5">Restaurants</Card.Header>
+                    <Card.Header img src="../../component/"as="h4">Restaurants</Card.Header>
                     <Card.Body>
                         <Card.Title>Choose a Restaurant location, name and price</Card.Title>
                         <Card.Text>
@@ -70,6 +71,7 @@ class Restaurant extends React.Component {
                             )}
                         </Card.Text>
                     </Card.Body>
+                    <Image className="bottom-image" src={restaurant2} height="200px" width="280px" />
                 </Card>
 
             </div>

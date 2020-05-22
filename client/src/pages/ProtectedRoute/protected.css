@@ -5,7 +5,7 @@
 }
 
 .protected-container {
-    background-color: darkolivegreen;
+    background-color: rgb(41, 38, 38);
     background-repeat: no-repeat;
     height: auto;
 }
@@ -13,5 +13,6 @@
 .card {
     color: white;
     background-color: transparent;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: normal;
 }
