@@ -3,6 +3,8 @@ import axios from 'axios';
 import postData from "./data";
 import Card from 'react-bootstrap/Card'
 import "./index.css"
+import Image from 'react-bootstrap/Image'
+import restaurant from "../../images/restaurant.jpg"
 
 class Restaurant extends React.Component {
     constructor(props) {
@@ -55,7 +57,8 @@ class Restaurant extends React.Component {
         return (
             <div>
                 <Card className="restaurants-card">
-                    <Card.Header as="h5">Restaurants</Card.Header>
+                <Image src={restaurant} height="200px" width="280px" />
+                    <Card.Header img src="../../component/"as="h5">Restaurants</Card.Header>
                     <Card.Body>
                         <Card.Title>Choose a Restaurant location, name and price</Card.Title>
                         <Card.Text>
