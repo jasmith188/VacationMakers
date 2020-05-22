@@ -25,14 +25,14 @@ const transactionSchema = new Schema(
       type: String,
       required: "Enter a price"
     },
-    origin: {
-      type: String,
-      required: "Enter a price"
-    },
-    destination: {
-      type: String,
-      required: "Enter a price"
-    },
+    // origin: {
+    //   type: String,
+    //   required: "Enter a price"
+    // },
+    // destination: {
+    //   type: String,
+    //   required: "Enter a price"
+    // },
   }
 );
 

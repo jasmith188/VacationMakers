@@ -63,8 +63,8 @@ function Budget(props) {
         price: formObject.price,
         departure: formObject.departure,
         arrival: formObject.arrival,
-        origin: formObject.origin,
-        destination: formObject.destination
+        // origin: formObject.origin,
+        // destination: formObject.destination
 
       })
         .then(res => loadTransactions())
@@ -120,7 +120,7 @@ function Budget(props) {
                 />
                 
               </Form.Group>
-
+{/* 
               <Form.Group controlId="formBasicEmail">
                 
                 <Input
@@ -139,7 +139,7 @@ function Budget(props) {
                   placeholder="Destination of Flight (Flights only)"
                 />
                 
-              </Form.Group>
+              </Form.Group> */}
 
               <Form.Group controlId="formBasicEmail">
                 <Input
@@ -172,7 +172,7 @@ function Budget(props) {
                   <ListItem key={transaction._id}>
                     <div to={"/transaction/" + transaction._id}>
                      
-                        On {transaction.departure} at {transaction.arrival} {transaction.name} in {transaction.location} to {transaction.destination} for ${transaction.price}  
+                        On {transaction.departure} at {transaction.arrival} {transaction.name} in {transaction.location}  {transaction.destination} for ${transaction.price}  
                      
 
                     </div>
