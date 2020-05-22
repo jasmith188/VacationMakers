@@ -163,7 +163,7 @@ function Budget(props) {
           </div>
         </div>
         <div className="col-lg-4">
-        <Card style={{ width: '18rem' }}>
+        <Card clasName="submit" style={{ width: '18rem' }}>
         <Card.Header as="h4">Things I have planned for this vacation</Card.Header>
         <ListGroup variant="flush">
             {transactions.length ? (
