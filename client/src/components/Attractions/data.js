@@ -7,34 +7,29 @@ const postData =
          "price": 60
     },{
         "location_id": "355665786",
-        "name": "Pine Bay Resort", 
-        "location": "Miami",
+        "name": "Universal Studios", 
+        "location": "Orlando",
         "price": 40
     },{
         "location_id": "355665786",
-        "name": "Carson & Coil", 
-        "location": "Cape Coral",
+        "name": "ESPN World Wide of Sports", 
+        "location": "Orlando",
         "price": 210
     },{
         "location_id": "355665786",
-        "name": "Maritime Inn", 
-        "location": "New Smyrna Beach",
+        "name": "Black Pointe", 
+        "location": "Bunnel",
         "price": 90
     },{
         "location_id": "355665786",
-        "name": "Hilton at Fort Meyers", 
-        "location": "Ormond Beach",
+        "name": "Ponce Inlet Lighthouse", 
+        "location": "Ponce Inlet",
         "price": 160
     },{
         "location_id": "355665786",
-        "name": "Hyatt Downtown", 
-        "location": "Sarasota",
+        "name": "Epcot", 
+        "location": "Orlando",
         "price": 120
-    },{
-        "location_id": "355665786",
-        "name": "Mama's Bed & Breakfast", 
-        "location": "Fort Lauderdale",
-        "price": 260
     }
 ]
 
