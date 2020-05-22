@@ -5,6 +5,7 @@ import postData from "./data"
 import "./index.css"
 import Image from 'react-bootstrap/Image'
 import castle from "../../images/castle.jpg"
+import attraction from "../../images/attraction.jpg"
 
 class Attractions extends React.Component {
     state = {
@@ -49,7 +50,7 @@ class Attractions extends React.Component {
             <div>
                 <Card className="attractions-card">
                 <Image src={castle} height="200px" width="280px" />
-                    <Card.Header as="h5">Atrractions and Things to do</Card.Header>
+                    <Card.Header as="h4">Atrractions and Things to do</Card.Header>
                     <Card.Body>
                         <Card.Title>Pick an activity to do, location and price</Card.Title>
                         <Card.Text>
@@ -61,6 +62,7 @@ class Attractions extends React.Component {
                             )}
                         </Card.Text>
                     </Card.Body>
+                    <Image className="bottom-image" src={attraction} height="200px" width="280px" />
                 </Card>
 
             </div>

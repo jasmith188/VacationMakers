@@ -1,3 +1,15 @@
 .budget-form {
     text-align: center;
 }
+
+.card {
+    border-color:transparent;
+}
+
+.form-label {
+    color: white;
+}
+
+.text-muted {
+    color: white;
+}
