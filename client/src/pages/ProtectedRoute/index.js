@@ -7,6 +7,7 @@ import Attractions from "../../components/Attractions"
 import Flight from "../../components/Flight"
 import Budget from "../../components/Budget"
 import Footer from "../../components/Footer"
+import POI from "../../components/POI"
 import "../ProtectedRoute/protected.css"
 
 
@@ -82,6 +83,12 @@ function ProtectedRoute() {
                     <div>
                         <br/>
                         <Budget />
+                    </div>
+                </div>
+                <div className="row">
+                    <div>
+                        <br/>
+                        <POI />
                     </div>
                 </div>
             </div>
