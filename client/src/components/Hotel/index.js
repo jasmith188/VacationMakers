@@ -5,42 +5,42 @@ import "./index.css"
 import Image from 'react-bootstrap/Image'
 import hotel from "../../images/hotel.jpg"
 import hotel2 from "../../images/hotel2.jpg"
+const axios = require("axios");
 
 class HotelAPI extends React.Component {
     state = {
-        posts: postData
+        posts: []
     }
 
     componentDidMount() {
-    //     axios({
-    //         "method": "GET",
-    //         "url": "https://tripadvisor1.p.rapidapi.com/hotels/list",
-    //         "headers": {
-    //             "content-type": "application/octet-stream",
-    //             "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-    //             "x-rapidapi-key": "e60eeecd26msh7858828104aa1fbp16c2d9jsn16ade6057027",
-    //             "useQueryString": true
-    //         }, "params": {
-    //             "offset": "0",
-    //             "currency": "USD",
-    //             "limit": "5",
-    //             "order": "asc",
-    //             "lang": "en_US",
-    //             "sort": "recommended",
-    //             "nights": "2",
-    //             "location_id": "293919",
-    //             "adults": "2",
-    //             "rooms": "1"
-    //         }
-    //     })
-    //         .then((response) => {
-    //             console.log(response.data.data)
-    //             this.setState({ posts: response.data.data })
 
-    //         })
-    //         .catch((error) => {
-    //             console.log(error)
-    //         })
+        axios({
+            "method":"GET",
+            "url":"https://tripadvisor1.p.rapidapi.com/hotels/list-by-latlng",
+            "headers":{
+            "content-type":"application/octet-stream",
+            "x-rapidapi-host":"tripadvisor1.p.rapidapi.com",
+            "x-rapidapi-key":"e60eeecd26msh7858828104aa1fbp16c2d9jsn16ade6057027",
+            "useQueryString":true
+            },"params":{
+            "lang":"en_US",
+            "limit":"15",
+            "currency":"USD",
+            "checkin":"2020%2F09%2F08",
+            "subcategory":"hotel%2Cbb%2Cspecialty",
+            "nights":"2",
+            "radius":"100",
+            "latitude":"28.5421109",
+            "longitude":"-81.3790304"
+            }
+            })
+            .then((response)=>{
+              console.log(response)
+              this.setState({ posts: response.data.data })
+            })
+            .catch((error)=>{
+              console.log(error)
+            })
     }
 
     render() {
