@@ -1,7 +1,8 @@
-/* .attractions-card {
-    border-color: white;
+.attractions-card {
+    border-color: black;
     border-width: thick;
-} */
+    margin-left: 15px;
+}
 
 .bottom-image {
     margin-left: 240px;

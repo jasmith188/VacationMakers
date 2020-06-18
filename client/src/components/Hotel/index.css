@@ -1,7 +1,9 @@
-/* .hotel-card {
-    border-color: white;
+.hotel-card {
+    border-color: black;
     border-width: thick;
-} */
+    margin-right: 15px;
+    justify-content: center;
+}
 
 .bottom-image {
     margin-left: 240px;

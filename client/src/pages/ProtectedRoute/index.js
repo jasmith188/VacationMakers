@@ -8,6 +8,7 @@ import Flight from "../../components/Flight"
 import Budget from "../../components/Budget"
 import Footer from "../../components/Footer"
 import Trails from "../../components/Trails"
+import Webcam from "../../components/Webcam"
 import "../ProtectedRoute/protected.css"
 
 
@@ -45,52 +46,60 @@ function ProtectedRoute() {
 
     const restaurantOnclick = (event) => {
         console.log(event.currentTarget.innerText);
-      
-      
+
+
         setRestaurant(event.currentTarget.innerText);
     }
 
     return (
-        <div className="protected-container">
+        <div>
             <Card title="Choose From A Category Below And Add It To Your Itinerary">
             </Card>
 
-            <div className="container">
+            <div>
                 <div className="row">
-                    <div className="col-lg-6">
-                        
-                        <Restaurant onclick={restaurantOnclick}/>
+                    <div className="col-lg-3">
+
+                        <Restaurant onclick={restaurantOnclick} />
                     </div>
                     <div className="col-lg-6">
-                       
+                        <Budget />
+                    </div>
+                    <div className="col-lg-3">
+
                         <Flight />
                     </div>
                 </div >
                 <br />
                 <div className="row">
-                   
-                    <div className="col-lg-6">
-                      
+
+                    <div className="col-lg-3">
+
                         <Attractions />
                     </div>
                     <div className="col-lg-6">
-                        
+                        <Trails />
+                    </div>
+                    <div className="col-lg-3">
+
                         <Hotel />
                     </div>
 
                 </div>
+                
                 <div className="row">
-                    <div>
-                        <br/>
-                        <Budget />
+                    <div className="col-lg-6">
+                        <div>
+                            <br />
+                            {/* <Trails /> */}
+                        </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div>
-                        <br/>
-                        <Trails />
+                    <div className="col-lg-6">
+                        <div>
+                            <br />
+                            {/* <Webcam /> */}
+                        </div>
                     </div>
-                    
                 </div>
             </div>
             <Footer />

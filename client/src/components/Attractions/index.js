@@ -62,7 +62,6 @@ class Attractions extends React.Component {
                             )}
                         </Card.Text>
                     </Card.Body>
-                    <Image className="bottom-image" src={attraction} height="200px" width="280px" />
                 </Card>
 
             </div>

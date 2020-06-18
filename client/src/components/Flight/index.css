@@ -1,7 +1,8 @@
-/* .flight-card {
-    border-color: white;
+.flight-card {
+    border-color: black;
     border-width: thick;
-} */
+    margin-right: 15px;
+}
 
 .bottom-image {
     margin-left: 240px;
