@@ -43,7 +43,7 @@ class Trails extends React.Component {
                             <Card.Title as="h3">{post.name} <br /></Card.Title>
                             <Card.Text as="h4">{post.city}</Card.Text>
                             <Card.Text as="h6">{post.url}</Card.Text>
-                            <Card.Text as="h8">{post.description} 
+                            <Card.Text as="h9">{post.description} 
                             <br />
                             </Card.Text>
                             <br />
