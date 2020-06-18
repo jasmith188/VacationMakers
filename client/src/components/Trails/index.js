@@ -37,7 +37,7 @@ class Trails extends React.Component {
             <div>
 
                 <Card>
-
+                <Card.Header as="h1">You can check out some really cool walking and bike trails around the Florida area.</Card.Header>
                     {this.state.posts.map(post =>
                         <div key={post.location_id}>
                             <Card.Title as="h3">{post.name} <br /></Card.Title>

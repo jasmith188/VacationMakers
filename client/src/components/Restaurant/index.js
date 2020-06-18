@@ -28,7 +28,7 @@ class Restaurant extends React.Component {
             "x-rapidapi-key":"e60eeecd26msh7858828104aa1fbp16c2d9jsn16ade6057027",
             "useQueryString":true
             },"params":{
-            "limit":"12",
+            "limit":"8",
             "currency":"USD",
             "distance":"10",
             "lunit":"mi",
@@ -59,7 +59,7 @@ class Restaurant extends React.Component {
                         <Card.Text>
                             {this.state.posts.map(post =>
 
-                                <div key={post.location_id} onClick={this.onclick}>  {post.location_string} | {post.name} | ${post.price}
+                                <div key={post.location_id} onClick={this.onclick}>  {post.location_string} | {post.name} | ${post.price} | {post.website}
                                 </div>
 
                             )}

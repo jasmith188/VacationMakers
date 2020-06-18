@@ -83,7 +83,7 @@ function Budget(props) {
                 <Input
                   onChange={handleInputChange}
                   name="departure"
-                  placeholder="Date of Departure e.g.: 06-20-20"
+                  placeholder="Date of Arrival e.g.: 06-20-20"
                 />
 
 
@@ -93,7 +93,7 @@ function Budget(props) {
                 <Input
                   onChange={handleInputChange}
                   name="arrival"
-                  placeholder="Date of Arrival e.g.: 06-27-20"
+                  placeholder="Date of Departure e.g.: 06-27-20"
                 />
 
 
@@ -104,7 +104,7 @@ function Budget(props) {
                 <Input
                   onChange={handleInputChange}
                   name="name"
-                  placeholder="Name of hotel, restaurant, airport or attraction"
+                  placeholder="Name of Hotel, Restaurant, Airport or Attraction"
                 />
 
 
@@ -192,8 +192,8 @@ function Budget(props) {
         </div>
         <div className="row">
           <div className="col-12">
-            <div className="card">
-              <h4>The Total Cost Of Your Trip  </h4>
+            <div className="total-card">
+              <h4>The Total Cost Of Your Trip is...</h4>
               <h1>${totalPrice} </h1>
             </div>
           </div>
