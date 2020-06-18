@@ -52,17 +52,20 @@ function ProtectedRoute() {
     }
 
     return (
-        <div className="protected-container">
+        <div>
             <Card title="Choose From A Category Below And Add It To Your Itinerary">
             </Card>
 
-            <div className="container">
+            <div>
                 <div className="row">
-                    <div className="col-lg-6">
+                    <div className="col-lg-3">
 
                         <Restaurant onclick={restaurantOnclick} />
                     </div>
                     <div className="col-lg-6">
+                        <Budget />
+                    </div>
+                    <div className="col-lg-3">
 
                         <Flight />
                     </div>
@@ -70,22 +73,20 @@ function ProtectedRoute() {
                 <br />
                 <div className="row">
 
-                    <div className="col-lg-6">
+                    <div className="col-lg-3">
 
                         <Attractions />
                     </div>
                     <div className="col-lg-6">
+                        <Trails />
+                    </div>
+                    <div className="col-lg-3">
 
                         <Hotel />
                     </div>
 
                 </div>
-                <div className="row">
-                    <div>
-                        <br />
-                        <Budget />
-                    </div>
-                </div>
+                
                 <div className="row">
                     <div className="col-lg-6">
                         <div>
@@ -96,7 +97,7 @@ function ProtectedRoute() {
                     <div className="col-lg-6">
                         <div>
                             <br />
-                            <Webcam />
+                            {/* <Webcam /> */}
                         </div>
                     </div>
                 </div>

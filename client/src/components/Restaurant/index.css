@@ -1,8 +1,9 @@
-/* .restaurants-card {
-    border-color: white;
+.restaurants-card {
+    border-color: black;
     border-width: thick;
+    margin-left: 15px;
     
-} */
+}
 
 .bottom-image {
     margin-left: 240px;

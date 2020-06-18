@@ -85,8 +85,8 @@ function Budget(props) {
                   name="departure"
                   placeholder="Date of Departure e.g.: 06-20-20"
                 />
-                
-                
+
+
               </Form.Group>
 
               <Form.Group controlId="formBasicEmail">
@@ -95,31 +95,31 @@ function Budget(props) {
                   name="arrival"
                   placeholder="Date of Arrival e.g.: 06-27-20"
                 />
-                
-                
+
+
               </Form.Group>
 
               <Form.Group controlId="formBasicEmail">
-               
+
                 <Input
                   onChange={handleInputChange}
                   name="name"
                   placeholder="Name of hotel, restaurant, airport or attraction"
                 />
-                
-                
+
+
               </Form.Group>
 
               <Form.Group controlId="formBasicEmail">
-                
+
                 <Input
                   onChange={handleInputChange}
                   name="location"
                   placeholder="Location of where your activity is"
                 />
-                
+
               </Form.Group>
-{/* 
+              {/* 
               <Form.Group controlId="formBasicEmail">
                 
                 <Input
@@ -151,7 +151,7 @@ function Budget(props) {
     </Form.Text>
               </Form.Group>
 
-              
+
               <FormBtn
                 disabled={!(formObject.name && formObject.location)}
                 onClick={handleFormSubmit}
@@ -162,41 +162,42 @@ function Budget(props) {
           </div>
         </div>
         <div className="col-lg-4">
-        <Card clasName="submit" style={{ width: '18rem' }}>
-        <Card.Header as="h4">Things I have planned for this vacation</Card.Header>
-        <ListGroup variant="flush">
-            {transactions.length ? (
-              <TransactionList>
-                {transactions.map(transaction => (
-                  <ListItem key={transaction._id}>
-                    <div to={"/transaction/" + transaction._id}>
-                     
-                        On {transaction.departure} at {transaction.arrival} {transaction.name} in {transaction.location}  {transaction.destination} for ${transaction.price}  
-                     
+          <Card clasName="submit" style={{ width: '18rem' }}>
+            <Card.Header as="h4">Things I have planned for this vacation</Card.Header>
+            <ListGroup variant="flush">
+              {transactions.length ? (
+                <TransactionList>
+                  {transactions.map(transaction => (
+                    <ListItem key={transaction._id}>
+                      <div to={"/transaction/" + transaction._id}>
 
-                    </div>
-                    <TransactionDeleteBtn onClick={() => deleteTransaction(transaction._id)} />
-                  </ListItem>
-                ))}
+                        On {transaction.departure} at {transaction.arrival} {transaction.name} in {transaction.location}  {transaction.destination} for ${transaction.price}
 
-                <div>
-                  {props.userAddedRestaurant}
-                </div>
-              </TransactionList>
 
-            ) : (
-                <h5>Nothing Planned Yet...</h5>
-              )}
-              </ListGroup>
+                      </div>
+                      <TransactionDeleteBtn onClick={() => deleteTransaction(transaction._id)} />
+                    </ListItem>
+                  ))}
+
+                  <div>
+                    {props.userAddedRestaurant}
+                  </div>
+                </TransactionList>
+
+              ) : (
+                  <h5>Nothing Planned Yet...</h5>
+                )}
+            </ListGroup>
           </Card>
         </div>
-        <div className="col-3">
-          <div className="card">
-            <h4>The Total Cost Of Your Trip  </h4>
-            <h1>${totalPrice} </h1>
+        <div className="row">
+          <div className="col-12">
+            <div className="card">
+              <h4>The Total Cost Of Your Trip  </h4>
+              <h1>${totalPrice} </h1>
+            </div>
           </div>
         </div>
-
       </div>
     </div >
   );

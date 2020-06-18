@@ -19,7 +19,7 @@ class Trails extends React.Component {
                 "x-rapidapi-key": "e60eeecd26msh7858828104aa1fbp16c2d9jsn16ade6057027",
                 "useQueryString": true
             }, "params": {
-                "radius": "20",
+                "radius": "13",
                 "lat": "28.5421109",
                 "lon": "-81.3790304"
             }
