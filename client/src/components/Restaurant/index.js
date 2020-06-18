@@ -70,7 +70,6 @@ class Restaurant extends React.Component {
                             )}
                         </Card.Text>
                     </Card.Body>
-                    <Image className="bottom-image" src={restaurant2} height="200px" width="280px" />
                 </Card>
 
             </div>

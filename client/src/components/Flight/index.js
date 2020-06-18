@@ -53,7 +53,7 @@ class Flight extends React.Component {
                             )}
                         </Card.Text>
                     </Card.Body>
-                    <Image className="bottom-image" src={flight2} height="200px" width="280px" />
+                    
                 </Card>
 
             </div>

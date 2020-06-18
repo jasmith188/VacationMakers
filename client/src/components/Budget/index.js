@@ -193,7 +193,7 @@ function Budget(props) {
         <div className="col-3">
           <div className="card">
             <h4>The Total Cost Of Your Trip  </h4>
-            <p> Total Cost: ${totalPrice} </p>
+            <h1>${totalPrice} </h1>
           </div>
         </div>
 

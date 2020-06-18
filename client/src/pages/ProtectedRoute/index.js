@@ -8,6 +8,7 @@ import Flight from "../../components/Flight"
 import Budget from "../../components/Budget"
 import Footer from "../../components/Footer"
 import Trails from "../../components/Trails"
+import Webcam from "../../components/Webcam"
 import "../ProtectedRoute/protected.css"
 
 
@@ -45,8 +46,8 @@ function ProtectedRoute() {
 
     const restaurantOnclick = (event) => {
         console.log(event.currentTarget.innerText);
-      
-      
+
+
         setRestaurant(event.currentTarget.innerText);
     }
 
@@ -58,39 +59,46 @@ function ProtectedRoute() {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6">
-                        
-                        <Restaurant onclick={restaurantOnclick}/>
+
+                        <Restaurant onclick={restaurantOnclick} />
                     </div>
                     <div className="col-lg-6">
-                       
+
                         <Flight />
                     </div>
                 </div >
                 <br />
                 <div className="row">
-                   
+
                     <div className="col-lg-6">
-                      
+
                         <Attractions />
                     </div>
                     <div className="col-lg-6">
-                        
+
                         <Hotel />
                     </div>
 
                 </div>
                 <div className="row">
                     <div>
-                        <br/>
+                        <br />
                         <Budget />
                     </div>
                 </div>
                 <div className="row">
-                    <div>
-                        <br/>
-                        <Trails />
+                    <div className="col-lg-6">
+                        <div>
+                            <br />
+                            {/* <Trails /> */}
+                        </div>
                     </div>
-                    
+                    <div className="col-lg-6">
+                        <div>
+                            <br />
+                            <Webcam />
+                        </div>
+                    </div>
                 </div>
             </div>
             <Footer />
