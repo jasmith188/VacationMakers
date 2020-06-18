@@ -39,7 +39,7 @@ function Nav() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
-      <Link className="navbar-brand" to="/public">
+      <Link className="navbar-brand" to="/">
         Vacation Makers
         </Link>
       <div className={`${open ? "" : "collapse "}navbar-collapse`} id="navbarNav">
@@ -47,7 +47,7 @@ function Nav() {
         <ul className="navbar-nav ml-auto">
           <li className="nav-item ">
             {/* <Link style={buttonStyle} className=" btn btn-secondary" to="/public">Public Page</Link> */}
-            <Link style={buttonStyle} className="btn btn-info" to="/protected">Main Page</Link>
+            {/* <Link style={buttonStyle} className="btn btn-info" to="/protected">Main Page</Link> */}
             {user.username ? "" :
               <Link style={buttonStyle} className="btn btn-light" to="/register">Register a New User</Link>
             }
