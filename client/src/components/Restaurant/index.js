@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import postData from "./data";
 import Card from 'react-bootstrap/Card'
 import "./index.css"
