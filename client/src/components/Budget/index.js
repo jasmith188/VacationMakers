@@ -3,9 +3,8 @@ import transaction from "../../utils/transaction"
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import ListGroup from 'react-bootstrap/ListGroup'
-import { Link } from "react-router-dom";
 import { TransactionList, ListItem } from "../../components/TransactionList";
-import { Input, TextArea, FormBtn } from "../../components/TransactionForm";
+import { Input, FormBtn } from "../../components/TransactionForm";
 import TransactionDeleteBtn from "../../components/TransactionDeleteBtn";
 import "../Budget/index.css"
 
