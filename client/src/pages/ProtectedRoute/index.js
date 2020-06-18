@@ -53,7 +53,7 @@ function ProtectedRoute() {
 
     return (
         <div>
-            <Card title="Choose From A Category Below And Add It To Your Itinerary">
+            <Card title="Choose From A Category Below And Add It To Your Itinerary for your Florida Trip">
             </Card>
 
             <div>

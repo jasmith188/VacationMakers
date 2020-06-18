@@ -13,3 +13,7 @@
 .text-muted {
     color: black;
 }
+
+.total-card {
+    justify-content: center;
+}

@@ -50,7 +50,7 @@ function Register() {
 	}
 
 	return (
-		<div>
+		<div className="register">
 			<RegisterForm onRegister={register} />
 		</div>
 	)
