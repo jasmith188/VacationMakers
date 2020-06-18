@@ -7,7 +7,6 @@ import Attractions from "../../components/Attractions"
 import Flight from "../../components/Flight"
 import Budget from "../../components/Budget"
 import Footer from "../../components/Footer"
-import POI from "../../components/POI"
 import Trails from "../../components/Trails"
 import "../ProtectedRoute/protected.css"
 
@@ -89,12 +88,9 @@ function ProtectedRoute() {
                 <div className="row">
                     <div>
                         <br/>
-                        <POI />
-                    </div>
-                    <div>
-                        <br/>
                         <Trails />
                     </div>
+                    
                 </div>
             </div>
             <Footer />
